@@ -105,7 +105,7 @@ The function should return the following:
 ## Submission
 
 - Create a repository in your GitHub account called `js1-ma1` and __make sure it's public__
-- Create a file called `{your-name}-js1-ma1.js`, e.g. `mary-smith-js1-ma1.js`
+- Create a file called `{your-name}-js1-ma1.js`, e.g. `mary-smith-js1-ma1.js`. You only need to submit this one file.
 - Write your answers inside this file with a comment above each answer indicating the question number:
 
 
@@ -122,4 +122,7 @@ The function should return the following:
 // etc
 
 ```
+
+- Add, commit and push this file to your repo
+- Submit the repo link
 
