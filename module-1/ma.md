@@ -81,7 +81,7 @@ set the inner HTML of the `resultsContainer` variable from question 6 to the ret
 
 Using the function from question 8, add a `p` element containing the `age` property from each object. If the `age` property is missing, it should display `Age unknown` instead. 
 
-Warp the `h5` and `p` in a `div`.
+Wrap the `h5` and `p` in a `div`.
 
 The function should return the following:
 
