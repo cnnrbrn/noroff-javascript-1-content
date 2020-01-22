@@ -176,6 +176,10 @@ for(let i =0; i < listItems.length; i++) {
 
 ## Manipulating the elements
 
+When you change elements in the DOM with JavaScript, you are not changing the underlying HTML, only how that HTML is displayed in the browser.
+
+On live websites, the HTML (with the CSS, JavaScript, images) is stored on a server and cannot be changed by JavaScript that lives in the browser.
+
 > If you enter the following code examples in the browser console you will be able to see the changes to the DOM happening in real-time.
 
 ### style
