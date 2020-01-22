@@ -330,7 +330,7 @@ We will use the above two methods to select DOM elements in the [next lesson](2)
 
 #### Read
 
-[CSS: Tricks: What is the DOM](https://css-tricks.com/dom/) 
+[CSS Tricks: What is the DOM](https://css-tricks.com/dom/) 
 (You can skip the Ajax and Templating section)
 
 #### Watch
