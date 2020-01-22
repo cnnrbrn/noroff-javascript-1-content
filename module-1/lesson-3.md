@@ -201,7 +201,7 @@ We've seen before that we can join strings together using the `+` sign.
 We could create an HTML string with the name of the game in the loop like this:
 
 ```js
-    const name = "<h4>" + actionGames[i].name + "</h4">;
+    const name = "<h4>" + actionGames[i].name + "</h4>";
 ```
 
 We could do that inside the loop and log each `name` variable wrapped in an `h4` tag:
@@ -209,7 +209,7 @@ We could do that inside the loop and log each `name` variable wrapped in an `h4`
 ```js
 for (let i = 0; i < actionGames.length; i++) {
     // create the HTML string by joining the strings together
-    const name = "<h4>" + actionGames[i].name + "</h4">;
+    const name = "<h4>" + actionGames[i].name + "</h4>";
     console.log(name);
 }
 ```
@@ -232,7 +232,7 @@ Template literals use backticks and we embed variables inside a dollar sign `$` 
 Using template literals we could rewrite this
 
 ```js
-const name = "<h4>" + actionGames[i].name + "</h4">;
+const name = "<h4>" + actionGames[i].name + "</h4>";
 ```
 
 like this 
