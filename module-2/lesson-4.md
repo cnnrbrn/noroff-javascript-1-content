@@ -1,5 +1,7 @@
 # Lesson 4 
 
+## Available soon
+
 Check out the [step-7](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-7) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to follow this lesson.
 
 ## forEach
@@ -12,7 +14,7 @@ We can also use the `forEach` method. We'll see how it works using the array bel
 const cats = ["Blob", "Harold", "Slim"];
 ```
 
-This is how the code would look using a for loop:
+This is how the code would look using a `for loop`:
 
 ```js
 for(let i = 0; i < cats.length; i++) {
