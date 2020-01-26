@@ -1,6 +1,6 @@
-# Lesson 2 
+# Lesson 2 - Events
 
-[step-2](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-2) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code completed in module 1, lesson 4.
+[step-2](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-2) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code completed in Module 1, Lesson 4.
 
 ---
 
@@ -310,10 +310,353 @@ We don't want to select the buttons by their ids, we'd then have to add the even
 
 Instead we'll select all the buttons by their classes, loop through them and add the event listener inside the loop.
 
+Select all the buttons:
 
+```js
+const buttons = document.querySelectorAll(".btn.btn-secondary");
+console.log(buttons);
+```
 
+As we saw in module 1, lesson 2, `querySelectorAll` will return a `NodeList` of all the selected elements.
 
+<img src="/images/js1/button-nodelist.png" alt="Button NodeList" style="max-width:630px">
 
+We can loop through the list and add the `loadGames` callback to a `click` event listener:
+
+```js
+for(let i =0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", loadGames);
+}
+```
+
+The `loadGames` callback function will now run every time any of the buttons is clicked.
+
+But the function only loops through the `actionGames` array, so no matter which button is clicked the same array of games is displayed.
+
+We need to change which array is looped through depending on which button is clicked. We'll do this by checking the `id` of the button clicked.
+
+In the load games function, give it an argument of `event` and at the top of the function, log the `event.target` property:
+
+```js
+function loadGames(event) {
+    console.log(event.target);
+    // rest of the function code 
+```
+
+If you click on the shooter games button, the following be logged:
+
+```html
+<button class="btn btn-secondary" id="shooter">Load shooter games</button>
+```
+
+If you use `console.dir` instead, a clickable list of the button's properties will be logged. 
+
+<img src="/images/js1/button-event-target-properties.png" alt="Button event.target properties" style="max-width:630px">
+
+We can see we have access to the `id` property, which we can access like this:
+
+```js
+event.target.id
+```
+
+At the top of the `loadGames` function, assign the button's id to a variable:
+
+```js
+const buttonId = event.target.id;
+console.log(buttonId)
+```
+
+Click the buttons and you'll see their id gets logged in the console.
+
+The value of the id will decide which array we loop through. 
+
+We'll create a variable to hold the array to loop through. We'll declare it with `let` and give it an empty array as an initial value.
+
+```js
+let arrayToLoopThrough = [];
+```
+
+Now we'll write an if-else-if statement to set the value of `arrayToLoopThrough`:
+
+```js
+if(buttonId === "action") {
+    arrayToLoopThrough = actionGames;
+}
+else if (buttonId === "shooter") {
+    arrayToLoopThrough = shooterGames;
+}
+else if (buttonId === "rpg") {
+    arrayToLoopThrough = rpgGames;
+}
+
+console.log(arrayToLoopThrough);
+```
+
+`arrayToLoopThrough` will now hold a different array value depending on which button was clicked.
+
+The new code in the function:
+
+```js
+function loadGames(event) {
+
+    // assign the value of the button id to buttonId
+    const buttonId = event.target.id;
+
+    // declare a variable that will hold a different value depending on the button clicked
+    let arrayToLoopThrough = [];
+
+    if(buttonId === "action") {
+        // if the button with the id of "action" is clicked, assign actionGames to arrayToLoopThrough
+        arrayToLoopThrough = actionGames;
+    }
+    else if (buttonId === "shooter") {
+        // if the button with the id of "shooter" is clicked, assign shooterGames to arrayToLoopThrough
+        arrayToLoopThrough = shooterGames;
+    }
+    else if (buttonId === "rpg") {
+        // if the button with the id of "rpg" is clicked, assign rpgGames to arrayToLoopThrough
+        arrayToLoopThrough = rpgGames;
+    }
+
+    // the previous code
+    const container = document.querySelector(".container.results");
+    let newHTML = "";
+
+    for (let i = 0; i < actionGames.length; i++) {
+    // the rest of the previous code ...
+}
+```
+
+We are still looping through `actionGames` though, so no matter which button has been clicked and which array has been assigned to `arrayToLoopThrough`, only the games in `actionGames` will be displayed.
+
+The solution is to loop over `arrayToLoopThrough` instead. We can replace `actionGames` with `arrayToLoopThrough` in the for loop:
+
+```js
+for (let i = 0; i < arrayToLoopThrough.length; i++) {
+
+    let ratingValue = "Not rated";
+
+    if (arrayToLoopThrough[i].rating) {
+        ratingValue = arrayToLoopThrough[i].rating;
+    }
+
+    const genres = arrayToLoopThrough[i].genres;
+    const genresHTML = makeGenres(genres);
+
+    const platforms = arrayToLoopThrough[i].platforms;
+    const platformsHTML = makePlatforms(platforms);
+
+    const details = `<div class="card">
+                        <div class="image" style="background-image: url(${arrayToLoopThrough[i].background_image});"></div>
+                        <div class="details">
+                            <h4 class="name">${arrayToLoopThrough[i].name}</h4>
+                            <div class="rating">${ratingValue}</div>
+                            ${genresHTML}
+                            <div class="platforms">${platformsHTML}</div>
+                        </div>
+                    </div>`;
+
+    newHTML += details;
+}
+```
+
+Now different games will be displayed when the different buttons are clicked.
+
+---
+
+#### The full code
+
+```js
+// select all the buttons by their classes
+const buttons = document.querySelectorAll(".btn.btn-secondary");
+
+// loop through each button and add an event listener
+for(let i =0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", loadGames);
+}
+
+// add an argument called event to the func
+function loadGames(event) {
+
+    // assign the value of the button id to buttonId
+    const buttonId = event.target.id;
+
+    // declare a variable that will hold a different value depending on the button clicked
+    let arrayToLoopThrough = [];
+
+    if(buttonId === "action") {
+        // if the button with the id of "action" is clicked, assign actionGames to arrayToLoopThrough
+        arrayToLoopThrough = actionGames;
+    }
+    else if (buttonId === "shooter") {
+        // if the button with the id of "shooter" is clicked, assign shooterGames to arrayToLoopThrough
+        arrayToLoopThrough = shooterGames;
+    }
+    else if (buttonId === "rpg") {
+        // if the button with the id of "rpg" is clicked, assign rpgGames to arrayToLoopThrough
+        arrayToLoopThrough = rpgGames;
+    }
+
+    const container = document.querySelector(".container.results");
+    let newHTML = "";
+
+    for (let i = 0; i < arrayToLoopThrough.length; i++) {
+
+        let ratingValue = "Not rated";
+
+        if (arrayToLoopThrough[i].rating) {
+            ratingValue = arrayToLoopThrough[i].rating;
+        }
+
+        const genres = arrayToLoopThrough[i].genres;
+        const genresHTML = makeGenres(genres);
+
+        const platforms = arrayToLoopThrough[i].platforms;
+        const platformsHTML = makePlatforms(platforms);
+
+        const details = `<div class="card">
+                            <div class="image" style="background-image: url(${arrayToLoopThrough[i].background_image});"></div>
+                            <div class="details">
+                                <h4 class="name">${arrayToLoopThrough[i].name}</h4>
+                                <div class="rating">${ratingValue}</div>
+                                ${genresHTML}
+                                <div class="platforms">${platformsHTML}</div>
+                            </div>
+                        </div>`;
+
+        newHTML += details;
+    }
+
+    container.innerHTML = newHTML;
+}
+
+function makeGenres(genreArray) {
+
+    let genreHTML = "";
+
+    for (let i = 0; i < genreArray.length; i++) {
+        genreHTML += `<a class="genre">${genreArray[i].name}</a>`;
+    }
+
+    return genreHTML;
+}
+
+function makePlatforms(platformsArray) {
+
+    let platformsHTML = "";
+
+    for (let i = 0; i < platformsArray.length; i++) {
+        platformsHTML += `<span>${platformsArray[i].platform.name}</span>`;
+    }
+
+    return platformsHTML;
+}
+```
+
+#### Without the comments
+
+```js
+const buttons = document.querySelectorAll(".btn.btn-secondary");
+
+for(let i =0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", loadGames);
+}
+
+function loadGames(event) {
+
+    const buttonId = event.target.id;
+
+    let arrayToLoopThrough = [];
+
+    if(buttonId === "action") {
+        arrayToLoopThrough = actionGames;
+    }
+    else if (buttonId === "shooter") {
+        arrayToLoopThrough = shooterGames;
+    }
+    else if (buttonId === "rpg") {
+        arrayToLoopThrough = rpgGames;
+    }
+
+    const container = document.querySelector(".container.results");
+    let newHTML = "";
+
+    for (let i = 0; i < arrayToLoopThrough.length; i++) {
+
+        let ratingValue = "Not rated";
+
+        if (arrayToLoopThrough[i].rating) {
+            ratingValue = arrayToLoopThrough[i].rating;
+        }
+
+        const genres = arrayToLoopThrough[i].genres;
+        const genresHTML = makeGenres(genres);
+
+        const platforms = arrayToLoopThrough[i].platforms;
+        const platformsHTML = makePlatforms(platforms);
+
+        const details = `<div class="card">
+                            <div class="image" style="background-image: url(${arrayToLoopThrough[i].background_image});"></div>
+                            <div class="details">
+                                <h4 class="name">${arrayToLoopThrough[i].name}</h4>
+                                <div class="rating">${ratingValue}</div>
+                                ${genresHTML}
+                                <div class="platforms">${platformsHTML}</div>
+                            </div>
+                        </div>`;
+
+        newHTML += details;
+    }
+
+    container.innerHTML = newHTML;
+}
+
+function makeGenres(genreArray) {
+
+    let genreHTML = "";
+
+    for (let i = 0; i < genreArray.length; i++) {
+        genreHTML += `<a class="genre">${genreArray[i].name}</a>`;
+    }
+
+    return genreHTML;
+}
+
+function makePlatforms(platformsArray) {
+
+    let platformsHTML = "";
+
+    for (let i = 0; i < platformsArray.length; i++) {
+        platformsHTML += `<span>${platformsArray[i].platform.name}</span>`;
+    }
+
+    return platformsHTML;
+}
+```
+
+## Code improvement practice
+
+Switch statements were covered in Programming Foundations Module 1, Lesson 3.
+
+Convert the `if-else-if` statement to a `switch` statement. Remember to include a `default` code block. 
+
+Try it on your own, and we'll convert it in the next lesson.
+
+## Acivities
+
+#### Watch
+
+[LinkedIn Learning: JavaScript Essential Training](https://www.linkedin.com/learning/javascript-essential-training-3/what-are-dom-events)
+
+Watch the following videos:
+
+Section 7. JavaScript and the DOM, Part 2: Events:
+
+- What are DOM events?
+- Some typical DOM events
+- Trigger functions with event handlers
+- Add and use event listeners
+- Pass arguments via event listeners
 
 ---
 - [Go to lesson 3](3) 

@@ -1,10 +1,10 @@
 # Lesson 1 - More on functions
 
-First up in this module, we need to cover some new concepts regarding functions, as we are going to be using a lot of functions.
+This first lesson covers some new concepts regarding functions that we need to address as we'll be using a lot of functions.
 
 The concepts discussed here should become easier to understand once you start using them in your code.
 
-We will get back to coding as soon as these concepts have been addressed.
+We will get back to coding in lesson 2.
 
 ## Expressions
 
@@ -101,7 +101,7 @@ function() {
 }
 ```
 
-To call a function we use round brackets - parenthesis - `()`, and we can call a function expression by wrapping it in round brackets, and using the usual way (`()`) at the end of the expression to call it:
+To call a function we use round brackets - parenthesis - `()`, and we can call an anonymous function expression by wrapping it in round brackets and using parenthesis to call it:
 
 ```js
 (function() {
@@ -140,6 +140,9 @@ The above code produces the following error:
 Uncaught ReferenceError: Cannot access 'aFunctionExpression' before initialization
 ```
 
+You need to create function expressions before you use them.
+
+
 ## Callback functions - functions as arguments
 
 Previously, we've passed different kinds of values into function arguments.
@@ -147,8 +150,8 @@ Previously, we've passed different kinds of values into function arguments.
 > You can enter the code examples below in to the browser console to follow along, or save them in a .js file
 
 ```js
-function logTheArgument(valueToLog) {
-    console.log(valueToLog);
+function logTheArgument(someFunction) {
+    console.log(someFunction);
 }
 ```
 
@@ -179,8 +182,8 @@ We can also pass functions in as arguments, and call the function within the par
 Because an anonymous function is a valid expression in JavaScript, we can pass an anonymous function in to a function:
 
 ```js
-function logTheArgument(valueToLog) {
-    console.log(valueToLog);
+function logTheArgument(someFunction) {
+    console.log(someFunction);
 }
 
 // call the logTheArgument function and pass in an anonymous function
@@ -200,20 +203,20 @@ The function itself gets displayed in the console:
 
 If we change this line
 ```js
-console.log(valueToLog);
+console.log(someFunction);
 ```
 
 to this
 ```js
-valueToLog();
+someFunction();
 ```
 
 the function will be called (we're using round brackets to call the function that's passed in like we would call any function).
 
 
 ```js
-function logTheArgument(valueToLog) {
-    valueToLog();
+function logTheArgument(someFunction) {
+    someFunction();
 }
 
 // call the logTheArgument function and pass in an anonymous function
@@ -232,8 +235,8 @@ This might be better explained with an `alert`:
 
 
 ```js
-function logTheArgument(valueToLog) {
-    alert(valueToLog);
+function logTheArgument(someFunction) {
+    alert(someFunction);
 }
 
 // call the logTheArgument function and pass in an anonymous function
@@ -247,13 +250,13 @@ If you run this code, the function definition is displayed in an alert window.
 Change this 
 
 ```js
-alert(valueToLog);
+alert(someFunction);
 ```
 
 back to this
 
 ```js
-valueToLog();
+someFunction();
 ```
 
 and the function gets called and the console log message is displayed.
@@ -262,7 +265,7 @@ and the function gets called and the console log message is displayed.
 
 It's probably a little difficult to read, passing in functions like that.
 
-You can assign the function to a variable, and then pass it in.
+You can assign the function to a variable (creating a function expression), and then pass it in.
 
 ```js
 // assign the function to a variable
@@ -274,8 +277,8 @@ const myFunction = function() {
 Full example:
 
 ```js
-function logTheArgument(valueToLog) {
-    valueToLog();
+function logTheArgument(someFunction) {
+    someFunction();
 }
 
 // assign the function to a variable
@@ -287,7 +290,32 @@ const myFunction = function() {
 logTheArgument(myFunction);
 ```
 
+You can also declare a function and then pass it in:
 
+```js
+// declare the function
+function myFunction() {
+    console.log("I am in the function stored in the variable");
+};
+```
+
+Full example:
+
+```js
+function logTheArgument(someFunction) {
+    someFunction();
+}
+
+// declare the function
+function myFunction() {
+    console.log("I am in the function stored in the variable");
+};
+
+// call the logTheArgument function and pass in the declared function
+logTheArgument(myFunction);
+```
+
+Use whichever method you find easiest to read and write.
 
 ---
 
@@ -296,7 +324,20 @@ logTheArgument(myFunction);
 
 #### Read
 
-flaviocopes.com: [JavaScript Expressions](https://flaviocopes.com/javascript-expressions/)
+medium.com: [Function Declarations vs Function Expressions](https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052)
+
+
+#### Watch
+
+[LinkedIn Learning: JavaScript Essential Training](https://www.linkedin.com/learning/javascript-essential-training-3/)
+
+Watch the following videos:
+
+Section 4. Functions and Objects:
+
+- Anonymous functions
+- Immediately invoked functional expressions
+
 
 ---
 - [Go to lesson 2](2) 
