@@ -343,7 +343,7 @@ function loadGames(event) {
     // rest of the function code 
 ```
 
-If you click on the shooter games button, the following be logged:
+If you click on the shooter games button, the following will be logged:
 
 ```html
 <button class="btn btn-secondary" id="shooter">Load shooter games</button>
