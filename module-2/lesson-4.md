@@ -1,4 +1,4 @@
-# Lesson 4 
+# Lesson 4 - forEach, setInterval, setTimeout
 
 
 Check out the [step-7](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-7) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to follow this lesson.
