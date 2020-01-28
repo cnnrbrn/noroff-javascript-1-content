@@ -457,6 +457,12 @@ Every time the function gets called, the for loop will run first and remove the 
 
 Then, using `event.target`, the button that was just clicked will have the class added to it.
 
+## Activities
+
+### Watch
+
+YouTube: [Switch statements](https://www.youtube.com/watch?v=UeXDAu7SdmY)
+
 ---
 - [Go to lesson 4](4) 
 ---
