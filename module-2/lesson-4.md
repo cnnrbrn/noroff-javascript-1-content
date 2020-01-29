@@ -21,7 +21,7 @@ for(let i = 0; i < cats.length; i++) {
 }
 ```
 
-This is what it what it would look like using a `forEach`:
+This is what it would look like using a `forEach`:
 
 ```js
 cats.forEach(function(cat) {
