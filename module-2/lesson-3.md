@@ -22,7 +22,7 @@ if(buttonId === "action") {
 else if (buttonId === "shooter") {
     arrayToLoopThrough = shooterGames;
 }
-else if (buttonId === "rpg") {ugh
+else if (buttonId === "rpg") {
     arrayToLoopThrough = rpgGames;
 }
 ```
