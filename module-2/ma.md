@@ -11,12 +11,14 @@ Create a function expression by assigning an anonmyous function to a variable ca
 <h5 class="question">Question 2</h5>
 <small>Refer: lesson 2</small>
 
-Select the `button` in the HTML below by its **class**. Add a `click` event listener. The callback function passed to the event listener should log the sentence `I was clicked`.
+*** The HTML in this question has been updated as it was causing a conflict with quesion 4. It doesn't have any effect on the required JavaScript. ***
+
+Select the `input` in the HTML below by its **class**. Add a `click` event listener. The callback function passed to the event listener should log the sentence `I was clicked`.
 
 You can pass the function in directly, declare it and pass it in by its name or assign it to a variable and pass it in by the variable name.
 
 ```html
-<button class="btn">Click me</button>
+<input type="button" class="btn" value="Click me">
 ```
 
 <h5 class="question">Question 3</h5>
