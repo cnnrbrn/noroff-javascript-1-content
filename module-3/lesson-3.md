@@ -482,9 +482,9 @@ The `replace` method takes to arguments:
 Let's replace any hyphens `-` in the genre with blank spaces `" "`:
 
 ```js
-const formattadGenres = genres.replace(/-/g, " ");
+const formattedGenres = genres.replace(/-/g, " ");
 
-genreHeading.innerText = formattadGenres;
+genreHeading.innerText = formattedGenres;
 ```
 
 ```html
