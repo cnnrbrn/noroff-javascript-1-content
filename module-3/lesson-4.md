@@ -296,6 +296,111 @@ releaseDate.innerText = `Released: ${details.released}`;
 
 container.appendChild(releaseDate);
 ```
+
+That will place the `releaseDate` element at the bottom of the other elements.
+
+If we wanted to place it before another element, we can use the `before` method. Let's place it before the description:
+
+```js
+description.before(releaseDate);
+```
+
+The complete `createDetails` function:
+
+```js
+function createDetails(details) {
+    const container = document.querySelector(".container");
+
+    // select the loader and then remove it from the DOM
+    const loader = document.querySelector(".loader");
+    container.removeChild(loader);
+
+    // create the heading
+    const heading = document.createElement("h1");
+    heading.innerText = details.name;
+
+    container.appendChild(heading);
+
+    // add the div with a background image
+    const backgroundImage = document.createElement("div");
+    backgroundImage.className = "details-image";
+    backgroundImage.style.backgroundImage = `url("${details.background_image}")`;
+
+    container.appendChild(backgroundImage);
+
+    // add the description
+    const description = document.createElement("div");
+    description.className = "details-description";
+    description.innerHTML = details.description;
+
+    container.appendChild(description);
+
+    // add the release date
+    const releaseDate = document.createElement("time");
+    releaseDate.className = "details-date";
+    releaseDate.innerText = `Released: ${details.released}`;
+
+    description.before(releaseDate);
+}
+```
+---
+
+### Adding the genre links to the details page
+
+One of the things that makes functions so useful is that we can reuse their functionality. 
+
+Let's reuse the `makeGenres` function on this page to create the genre links.
+
+We've moved both the `makreGenres` and `makePlatforms` functions from `js/script.js` to `js/tags/js` and are loading it in `details.html`.
+
+This means me can use both functions on this page.
+
+First, let's create a div to hold the genres:
+
+```js
+const genres = document.createElement("div");
+genres.className = "details-genres";
+```
+
+Now we want to assign the return value of the `makeGenres` function to the innerHTML of the `genres` element and append it to the container.
+
+```js
+genres.innerHTML = makeGenres(details.genres);
+
+container.appendChild(genres);
+```
+
+No genres are being displayed and the console is displaying an error:
+
+```
+ReferenceError: genres is not defined
+```
+
+If we look inside the `makeGenres` function in `js/tags.js`, we have the `if` statement checking if the `genres` variable is equal to the `slug` of the `genre` being looped through:
+
+```js
+if (genres === genre.slug) {
+    activeClass = "active";
+}
+```
+
+Because `genres` is declared in `js/api.js` and we aren't loading that file on this page, the `genres` variable doesn't exist in this context and the error is thrown.
+
+We need to check if `genres` exists before using it in the comparison inside the if. We can do this using the `typeof` operator and checking it's not equal to the string value `"undefined"`:
+
+```js
+if (typeof genres !== "undefined" && genres === genre.slug) {
+    activeClass = "active";
+}
+```
+
+Now the `genre` links will be displayed after the description and we can use them to search for games in different genres.
+
+---
+
+Branch [step-17](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-17) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
+
+
 <!-- ---
 - [Go to the module assignment](ma) 
 --- -->
