@@ -352,6 +352,47 @@ Readable code is always preferable to succinct code. The ternary operator is int
 
 If you ever find yourself trying to write a nested ternary operation, don't do it. Be kind to yourself and other people who may read your work and write easy to follow code.
 
+---
+
+## Practice questions
+
+> The answers can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-3-lesson-1/js/script.js).
+
+<h5 class="question">Question 1</h5>
+
+Convert the function below to an arrow function:
+
+```js
+function multiply(a, b) {
+    return a * b;
+}
+```
+
+<h5 class="question">Question 2</h5>
+
+Convert the function below to an arrow function:
+
+```js
+function() {
+    console.log("Hello");
+}
+```
+
+<h5 class="question">Question 3</h5>
+
+Add a method to the object below that returns its colour property:
+
+```js
+const frog = {
+    colour: "green"
+}
+```
+
+<h5 class="question">Question 4</h5>
+
+Create an IIFE that logs the current date and time.
+
+
 
 <!-- ---
 
