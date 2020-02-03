@@ -181,7 +181,7 @@ function createDetails(details) {
 
 ### createElement
 
-So far we've created new HTML elemens using a string and assigning it to an element's `innerHTML` property.
+So far we've created new HTML elements using a string and assigning it to an element's `innerHTML` property.
 
 There is another way to create elements using the `createElement` method.
 
