@@ -329,7 +329,7 @@ If your connection is very fast and the call returns before you see the loader, 
 
 --- 
 
-[step-12](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-12) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains all the code so far.
+The [step-12](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-12) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains all the code so far.
 
 ---
 

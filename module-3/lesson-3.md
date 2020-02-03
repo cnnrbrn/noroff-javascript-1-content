@@ -442,7 +442,7 @@ function makeGenres(genreArray) {
 
 ---
 
-[step-14](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-14) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
+The [step-14](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-14) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
 
 ---
 
@@ -548,7 +548,7 @@ genreHeading.innerText = formattedGenres;
 
 --- 
 
-[step-15](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-15) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains all the code so far.
+The [step-15](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-15) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains all the code so far.
 
 ---
 
