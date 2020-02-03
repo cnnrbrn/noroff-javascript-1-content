@@ -339,7 +339,7 @@ This would become:
 ```js
 const pet = "rhino";
 
-const isDangerous = pet === "rhino" ? true : else;
+const isDangerous = pet === "rhino" ? true : false;
 ```
 
 The part after the `?` is code that will run if the conditional statement is true.

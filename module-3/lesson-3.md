@@ -557,6 +557,6 @@ The [step-15](https://github.com/javascript-repositories/javascript-1-lesson-cod
  -->
 
 
-<!-- ---
+---
 - [Go to lesson 4](4) 
---- -->
+---
