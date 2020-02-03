@@ -1,11 +1,5 @@
 # Lesson 1 - Arrow functions, scope, `this` and the ternary operator
 
-The `this` keyword is often a source of confusion to new JavaScript developers.
-
-We need to cover it in this lesson, but if you do find it difficult to follow, read through the material and then move on to the next section. You can always return to the section when you have a practical need to use `this`.
-
-First we'll look at arrow (or fat arrow) functions.
-
 ## Fat arrow functions
 
 We've worked with a few different types of functions up until now:
@@ -251,6 +245,10 @@ Neither of the variables declared inside the function will be available outside 
 
 
 ## this
+
+> The `this` keyword is often a source of confusion to new JavaScript developers.
+>
+> We need to cover it in this lesson, but if you do find it difficult to follow, read through the material and then move on to the next section. You can always return to the section when you have a practical need to use `this`.
 
 The `this` keyword refers to the `execution context` of the code.
 
