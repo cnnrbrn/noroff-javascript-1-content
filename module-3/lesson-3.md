@@ -512,7 +512,7 @@ To find all the matches for the pattern we can use the `g` modifier which will p
 We can use that regular expression in the `replace` method to replace all hyphens:
 
 ```js
-const formattadGenres = genres.replace(/-/g, " ");
+const formattedGenres = genres.replace(/-/g, " ");
 ```
 
 The full code we've added at the bottom of `js/api.js` so far:
@@ -520,9 +520,9 @@ The full code we've added at the bottom of `js/api.js` so far:
 ```js
 const genreHeading = document.querySelector("h1");
 
-const formattadGenres = genres.replace(/-/g, " ");
+const formattedGenres = genres.replace(/-/g, " ");
 
-genreHeading.innerText = formattadGenres;
+genreHeading.innerText = formattedGenres;
 
 ```
 
@@ -533,7 +533,7 @@ Let's use another `replace` method to replace it with nothing: `""`. It's the CS
 We'll chain the two replace methods:
 
 ```js
-const formattadGenres = genres.replace(/-/g, " ").replace(" rpg", "");
+const formattedGenres = genres.replace(/-/g, " ").replace(" rpg", "");
 ```
 
 The full code we've added at the bottom of `js/api.js`:
@@ -541,9 +541,9 @@ The full code we've added at the bottom of `js/api.js`:
 ```js
 const genreHeading = document.querySelector("h1");
 
-const formattadGenres = genres.replace(/-/g, " ").replace(" rpg", "");
+const formattedGenres = genres.replace(/-/g, " ").replace(" rpg", "");
 
-genreHeading.innerText = formattadGenres;
+genreHeading.innerText = formattedGenres;
 ```
 
 --- 
