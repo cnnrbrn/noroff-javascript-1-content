@@ -7,11 +7,8 @@
 
 Create a function expression by assigning an anonmyous function to a variable called `myFunctionExpression`. The function should console log your name. 
 
-
 <h5 class="question">Question 2</h5>
 <small>Refer: lesson 2</small>
-
-*** The HTML in this question has been updated as it was causing a conflict with quesion 4. It doesn't have any effect on the required JavaScript. ***
 
 Select the `input` in the HTML below by its **class**. Add a `click` event listener. The callback function passed to the event listener should log the sentence `I was clicked`.
 

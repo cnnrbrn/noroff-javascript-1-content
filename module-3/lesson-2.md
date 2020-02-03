@@ -329,18 +329,14 @@ If your connection is very fast and the call returns before you see the loader, 
 
 --- 
 
-[step-12](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-12) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
+[step-12](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-12) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains all the code so far.
 
 ---
-The API call is currently fetching games of any genre.
 
-In the next lesson we'll fetch games by genre.
-
-<!-- 
 The API call is currently fetching games of any genre.
 
 In the [next lesson](3) we'll fetch games by genre.
 
 ---
 - [Go to lesson 3](3) 
---- -->
+---
