@@ -398,6 +398,16 @@ if (typeof genres !== "undefined" && genres === genre.slug) {
 
 Now the `genre` links will be displayed after the description and we can use them to search for games in different genres.
 
+### Updating the page title
+
+We can update the page title using `document.title`.
+
+Let's set the title to the game's name, a pipe symbol `|` plus whatever is currently in the title. We'll add this at the bottom of the `createDetails` function.
+
+```js
+document.title = details.name + " | " + document.title;
+```
+
 ---
 
 Branch [step-17](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-17) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
