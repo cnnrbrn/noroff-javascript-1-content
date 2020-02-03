@@ -88,7 +88,7 @@ Click on the URL in the left pane to view details of the call:
 
 When we click on a genre in the menu, we want to fetch games in that genre.
 
-There are several ways to about it. We are going to do the following:
+There are several ways to got about it. We are going to do the following:
 
 - add a `genres` parameter to the current querystring and reload the page
 - when the page loads, retrieve the `genres` parameter and update the `genres` variable
