@@ -150,7 +150,7 @@ innerHTML = "";
 
 the link would disapper too, not just the loader.
 
-We an use the `removeChild` method to remove the loader from the DOM.
+We an use the `removeChild` method to remove only the loader from the DOM.
 
 First we'll select the container and the loader:
 
