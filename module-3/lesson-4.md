@@ -403,6 +403,6 @@ Now the `genre` links will be displayed after the description and we can use the
 Branch [step-17](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-17) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
 
 
-<!-- ---
+---
 - [Go to the module assignment](ma) 
---- -->
+---
