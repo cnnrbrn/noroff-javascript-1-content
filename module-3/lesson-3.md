@@ -90,7 +90,7 @@ When we click on a genre in the menu, we want to fetch games in that genre.
 
 There are several ways to got about it. We are going to do the following:
 
-- add a `genres` parameter to the current querystring and reload the page
+- add a `genres` parameter to the current query string and reload the page
 - when the page loads, retrieve the `genres` parameter and update the `genres` variable
 
 This isn't the most elegant way to achieve the desired result, but allows us to showcase a couple new techniques.
