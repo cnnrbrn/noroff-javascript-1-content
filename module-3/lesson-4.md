@@ -97,7 +97,7 @@ const gamesUrl = `${baseUrl}games/`;
 The format of the URL to fetch a specific game is 
 
 `
-https://api.rawg.io/api/games/
+https://api.rawg.io/api/games/id
 `
 
 so we'll create `detailsUrl` variable that includes the id:
