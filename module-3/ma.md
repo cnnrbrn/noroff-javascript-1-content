@@ -83,7 +83,7 @@ Add the new item as the second item in the `ul` below (add it after `Cows`).
 <h5 class="question">Question 7</h5>
 <small>Refer: lesson 4</small>
 
-Make a call to the URL below, pass the JSON it returns to a function.
+Make a call to the URL below and pass the JSON it returns to a function.
 
 Inside that function select the div from the HTML below and assign the `rating` property from the JSON object as it's text value.
 

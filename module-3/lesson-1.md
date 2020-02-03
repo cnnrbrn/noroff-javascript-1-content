@@ -352,6 +352,7 @@ Readable code is always preferable to succinct code. The ternary operator is int
 
 If you ever find yourself trying to write a nested ternary operation, don't do it. Be kind to yourself and other people who may read your work and write easy to follow code.
 
+
 <!-- ---
 
 ## Acivities
