@@ -393,6 +393,20 @@ const frog = {
 Create an IIFE that logs the current date and time.
 
 
+<h5 class="question">Question 5</h5>
+
+Convert the if statement below to use a ternary operator:
+
+```js
+const animal = "mongoose";
+
+let difficultToSpell = false;
+
+if(animal === "hippopotamus") {
+    difficultToSpell = true;
+}
+```
+
 
 <!-- ---
 
