@@ -338,5 +338,52 @@ The API call is currently fetching games of any genre.
 In the [next lesson](3) we'll fetch games by genre.
 
 ---
+
+## Practice question
+
+> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-3-lesson-2).
+
+There are two versions of the answer, in `js/script.js` and `js/script2.js`. 
+
+<h5 class="question">Question 1</h5>
+
+The endpoint below will return an array of screenshots from the game `Rocket League`.
+
+Call the endpoint and loop through the results to create a carousel using the HTML below. 
+
+The commented HTML is what you'll need to create in a loop. 
+
+The first item needs to have a class of `active` added to it otherwise the carousel will not display.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Lesson 2 | Module 3 | JavaScript 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
+            <div class="carousel-inner">
+                <!-- <div class="carousel-item active">
+                    <img class="d-block w-100" src="..." />
+				</div>
+				<div class="carousel-item">
+                    <img class="d-block w-100" src="..." />
+                </div>
+				-->
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
+```
+
+---
 - [Go to lesson 3](3) 
 ---
