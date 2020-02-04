@@ -342,12 +342,16 @@ In the [next lesson](3) we'll fetch games by genre.
 ## Practice question
 
 > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-3-lesson-2).
-
-There are two versions of the answer, in `js/script.js` and `js/script2.js`. 
+>
+> There are two versions of the answer, in `js/script.js` and `js/script2.js`. 
 
 <h5 class="question">Question 1</h5>
 
 The endpoint below will return an array of screenshots from the game `Rocket League`.
+
+```
+https://api.rawg.io/api/games/4003/screenshots
+```
 
 Call the endpoint and loop through the results to create a carousel using the HTML below. 
 
