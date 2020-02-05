@@ -345,7 +345,7 @@ In the [next lesson](3) we'll fetch games by genre.
 >
 > There are two versions of the answer, in `js/script.js` and `js/script2.js`. 
 
-<h5 class="question">Question 1</h5>
+<h5 class="question">Question</h5>
 
 The endpoint below will return an array of screenshots from the game `Rocket League`.
 
