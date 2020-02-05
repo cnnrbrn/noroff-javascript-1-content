@@ -16,8 +16,8 @@ function(a, b) {
 
 <h5 class="question">Question 2</h5>
 <small>Refer: lesson 2 / 4</small>
-
-> The URL for this question has been updated due to issues with the previous URL
+<!-- 
+> The URL for this question has been updated due to issues with the previous URL -->
 
 Make a call to the URL below, pass the JSON it returns to a function and inside that function loop through the results and log each game's name.
 
