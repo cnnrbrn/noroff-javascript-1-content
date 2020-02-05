@@ -22,12 +22,9 @@ Make a call to the URL below, pass the JSON it returns to a function and inside 
 In the `catch` method of your code, redirect to `error.html` if there is an error.
 
 ```js
-`https://elephant-api.herokuapp.com/elephants`
+https://cors-anywhere.herokuapp.com/https://elephant-api.herokuapp.com/elephants
 ```
 
-```html
-<div class="results"></div>
-```
 
 <h5 class="question">Question 3</h5>
 <small>Refer: lesson 3</small>
