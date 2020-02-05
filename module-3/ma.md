@@ -17,12 +17,14 @@ function(a, b) {
 <h5 class="question">Question 2</h5>
 <small>Refer: lesson 2 / 4</small>
 
-Make a call to the URL below, pass the JSON it returns to a function and inside that function loop through the results and log each elephant's name.
+> The URL for this question has been updated due to issues with the previous URL
+
+Make a call to the URL below, pass the JSON it returns to a function and inside that function loop through the results and log each games's name.
 
 In the `catch` method of your code, redirect to `error.html` if there is an error.
 
 ```js
-https://cors-anywhere.herokuapp.com/https://elephant-api.herokuapp.com/elephants
+https://api.rawg.io/api/games?genres=sports
 ```
 
 
