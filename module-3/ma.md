@@ -90,13 +90,8 @@ Inside that function select the div from the HTML below and assign the `rating` 
 In the `catch` method, log the error that may be returned.
 
 ```js
-`https://api.rawg.io/api/games/3801`
+https://api.rawg.io/api/games/3801
 ```
-
-```html
-<div class="rating"></div>
-```
-
 
 ---
 
