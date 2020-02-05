@@ -19,7 +19,7 @@ function(a, b) {
 
 > The URL for this question has been updated due to issues with the previous URL
 
-Make a call to the URL below, pass the JSON it returns to a function and inside that function loop through the results and log each games's name.
+Make a call to the URL below, pass the JSON it returns to a function and inside that function loop through the results and log each game's name.
 
 In the `catch` method of your code, redirect to `error.html` if there is an error.
 
