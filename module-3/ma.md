@@ -90,6 +90,11 @@ In the `catch` method, log the error that may be returned.
 https://api.rawg.io/api/games/3801
 ```
 
+```html
+<div class="rating"></div>
+```
+
+
 ---
 
 ## Submission
