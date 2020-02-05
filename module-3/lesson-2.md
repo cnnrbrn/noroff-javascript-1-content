@@ -353,11 +353,11 @@ The endpoint below will return an array of screenshots from the game `Rocket Lea
 https://api.rawg.io/api/games/4003/screenshots
 ```
 
-Call the endpoint and loop through the results to create a carousel using the HTML below. 
+Call the endpoint and loop through the results to create a image slider using the HTML below. 
 
-The commented HTML is what you'll need to create in a loop. 
+The supplied code will create the slider for you, you just need to create the HTML that is commented out in a loop.
 
-The first item needs to have a class of `active` added to it otherwise the carousel will not display.
+The first item needs to have a class of `active` added to it otherwise the slider will not display.
 
 ```html
 <!DOCTYPE html>
