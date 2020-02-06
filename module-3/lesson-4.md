@@ -307,7 +307,7 @@ If we wanted to place it before another element, we can use the `before` method.
 description.before(releaseDate);
 ```
 
-> The `after` method will insert an element after another one.
+> The `after` method will insert an element after another element.
 
 The complete `createDetails` function:
 
