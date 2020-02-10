@@ -198,7 +198,7 @@ We can use string methods to validate form inputs.
     Refer: 
     <ul>
         <li>
-            Validatin forms - <a href="https://interactive-content.now.sh/javascript-1/4/1#validating-forms">JavaScript 1 Module 4 Lesson 1</a>
+            Validating forms - <a href="https://interactive-content.now.sh/javascript-1/4/1#validating-forms">JavaScript 1 Module 4 Lesson 1</a>
         </li>       
     </ul>
 </small>
