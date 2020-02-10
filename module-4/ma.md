@@ -11,8 +11,8 @@ Add the following HTML and CSS to a page called `question1.html`.
 ```html
 <form id="contactForm">
     <div>
-        <input type="text" id="firstName" placeholder="First name" />
-        <div id="firstNameError" class="error">Please enter your first name</div>
+        <input type="text" id="firstName" placeholder="First name (minimum 2 characters)" />
+        <div id="firstNameError" class="error">Your first name must be at least 2 characters</div>
     </div> 
     <div>
         <button type="submit">Submit</button>
