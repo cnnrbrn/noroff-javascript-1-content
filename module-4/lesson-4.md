@@ -40,8 +40,7 @@ const cars = [
     }
 ];
 ```
-
-
+> Different versions of the answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-1/script.js).
 <!-- ---
 - [Go to the module assignment](ma) 
 --- -->
