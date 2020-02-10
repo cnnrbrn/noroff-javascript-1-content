@@ -200,3 +200,48 @@ We can use string methods to validate form inputs.
         </li>       
     </ul>
 </small>
+
+Add the following HTML and CSS to a page.
+
+```html
+<form>
+    <div>
+        <input type="text" id="firstName" placeholder="First name" />
+        <div id="firstNameError" class="error">Please enter your first name</div>
+    </div>
+    <div>
+        <input type="text" id="email" placeholder="Email address" />
+        <div id="emailError" class="error">Please enter your email address</div>
+        <div id="invalidEmailError" class="error">Please enter a valid email address</div>
+    </div>
+    <div>
+        <textarea id="message"></textarea>
+        <div id="messageError" class="error">Your message must be at least five characters long</div>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+```
+
+```css
+.error {
+    color: red;
+    display: none;
+}
+
+input,
+textarea {
+    width: 200px;
+    padding: 10px;
+    margin-top: 5px;
+}
+```
+
+Write code that checks the following when the form is submitted:
+
+- that the `firstName` input has a value
+- that the `email` input has a value and is an email address
+- the the `message` textarea has a value that is at least 5 characters long
+
+Show/hide the appropriate error messages every time the validation runs. Remember to prevent the default behaviour of the form which is to submit the form and refresh the page.

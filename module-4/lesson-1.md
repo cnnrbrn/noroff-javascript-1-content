@@ -341,14 +341,14 @@ Inside the `validateForm` function we'll first select the `firstName` input and 
 
 ```js
 const firstName = document.querySelector("#firstName");
-    const firstNameError = document.querySelector("#firstNameError");
-    const firstNameValue = firstName.value;
+const firstNameError = document.querySelector("#firstNameError");
+const firstNameValue = firstName.value;
 
-    if (checkInputLength(firstNameValue) === true) {
-        firstNameError.style.display = "none";
-    } else {
-        firstNameError.style.display = "block";
-    }
+if (checkInputLength(firstNameValue) === true) {
+    firstNameError.style.display = "none";
+} else {
+    firstNameError.style.display = "block";
+}
 ```
 
 The code in `js/contact.js` so far:
