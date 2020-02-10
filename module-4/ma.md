@@ -73,7 +73,7 @@ Add the following HTML to a page called `question3.html`:
 ```html
 <div class="container">
     <h1>Name of game</h1>
-    <div class="image" style="background-image: url('/path/to/image')"></div>
+    <div class="image" style="background-image: url('https://via.placeholder.com/1000')"></div>
     <div class="description">Description goes here</div>
 </div>
 ```
@@ -92,7 +92,6 @@ Make a call to `https://api.rawg.io/api/games/4200` and pass the JSON object it 
 Inside `createGameDetails` replace the placeholder values in the HTML above with properties from the object returned from the API call.
 
 Use either the `background_image` or `background_image_additional` property as the background image of the `<div class="image">` element.
-
 
 ## Submission
 

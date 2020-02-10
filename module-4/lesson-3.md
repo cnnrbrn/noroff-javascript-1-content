@@ -186,7 +186,5 @@ There is a `hidden` class in the CSS you can use to hide elements.
 You can find example code for this in [step-27](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-27). Look in `creator-detail.html` and `js/creator-details.js`.
 
 ---
-
-<!-- ---
 - [Go to lesson 4](4) 
---- -->
+---

@@ -1,7 +1,5 @@
 # Lesson 4 - Practice questions
 
-> Question 5 will be added shortly
-
 <h5 class="question">Question 1</h5>
 
 Looping through arrays of objects is important because that's how lists of results get returned from API calls.
@@ -168,7 +166,7 @@ Create an `.html` file that contains the following element:
 <div class="results"></div>
 ```
 
-Make a call using `fetch` to this URL:
+Make a call to this URL:
 
 ```js
 https://elephant-api.herokuapp.com/elephants
@@ -249,3 +247,7 @@ Write code that checks the following when the form is submitted:
 Show/hide the appropriate error messages every time the validation runs. Remember to prevent the default behaviour of the form which is to submit the form and refresh the page.
 
 > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-4).
+
+---
+- [Go to the module assignment](ma) 
+---

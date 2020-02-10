@@ -1,4 +1,4 @@
-# Lesson 2
+# Lesson 2 - Making API calls
 
 ## Asynchronous code
 

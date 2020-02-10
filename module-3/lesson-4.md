@@ -1,4 +1,4 @@
-# Lesson 4 
+# Lesson 4 - Fetching a specific item from an API
 
 Check out [step-16](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-16) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to follow this lesson.
 
@@ -413,7 +413,6 @@ document.title = details.name + " | " + document.title;
 ---
 
 Branch [step-17](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-17) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
-
 
 ---
 - [Go to the module assignment](ma) 

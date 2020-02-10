@@ -1,4 +1,4 @@
-# Lesson 3 
+# Lesson 3 - Query string parameters and string manipulation
 
 --- 
 
