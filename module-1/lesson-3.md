@@ -389,6 +389,8 @@ Your `index.html` page should look similar to this now, depending on the size of
 
 <img src="/images/js1/site-1.png" alt="Site example 1" style="max-width:800px">
 
+<a id="default-values"></a>
+
 ### Default values for missing properties
 
 Sometimes data returned from an API call will contain missing properties in the objects. The `The Elder Scrolls V` game is missing its rating property and is displaying `undefined`.

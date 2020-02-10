@@ -78,6 +78,7 @@ fetch(corsEnabledUrl)
 
 Now the API call will work.
 
+<a id="validating-forms"></a>
 
 ## String manipulation and form validation
 

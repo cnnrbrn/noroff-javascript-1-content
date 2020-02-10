@@ -94,6 +94,8 @@ Most of the time you won't write your own promises but will rather use libraries
 
 We aren't going to create any promises, but instead are going to use the promise-based `Fetch API` to make calls to the RAWG API and fetch data. The `Fetch API` is built in to most modern browsers.
 
+<a id="fetch"></a>
+
 ## Fetch API
 
 Check out the [step-11](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-11) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to follow this lesson.

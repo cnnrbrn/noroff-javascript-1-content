@@ -57,6 +57,9 @@ Functions allow us to create reusable code. We can return values from functions 
         <li>
             Creating HTML from arrays of objects - <a href="https://interactive-content.now.sh/javascript-1/1/3">JavaScript 1 Module 1 Lesson 3</a>
         </li>
+        <li>
+             Creating HTML in functions - <a href="https://interactive-content.now.sh/javascript-1/1/4">JavaScript 1 Module 1 Lesson 4</a>
+        </li>
     </ul>
 </small>
 
@@ -72,7 +75,7 @@ Create a function that receives one argument. When you call the function pass th
 
 Inside the function, loop through the array and create an `img` tag for each object, with `src` and `alt` attributes created from the properties in each object.
 
-Return the created HTML from function.
+Return the created HTML from the function.
 
 Assign the return value of the function to a variable and console log it.
 
@@ -84,6 +87,116 @@ It will look similar to this (though it will be one long string).
 <img src="https://elephant-api.herokuapp.com/pictures/missing.jpg" alt="Known for her tightrope walking act.">
 ```
 
-> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-1/script.js).
+> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-2/script.js).
 
 ---
+
+<h5 class="question">Question 3</h5>
+
+We can provide default values for missing object properties.
+
+<small>
+    Refer: 
+    <ul>
+        <li>
+            Default values for missing properties - <a href="https://interactive-content.now.sh/javascript-1/1/3#default-values">JavaScript 1 Module 1 Lesson 3</a>
+        </li>       
+    </ul>
+</small>
+
+```js
+const elephants = [
+    { image: "https://elephant-api.herokuapp.com/pictures/001.jpg", note: null},
+    { note: "From the Mysore Dasara procession." },
+    { image: null, note: "Known for her tightrope walking act." }
+];
+```
+
+The array above contains objects missing certain properties or with their values set to null.
+
+Write a function with code similar to question 2 but provide the following default values for missing properties:
+
+ - `src`  - https://via.placeholder.com/250
+ - `alt` - "Elephant picture"
+
+Wrap all the `img` tags in a `div` tag.
+
+The function should return an HTML string similar to this (without the indentation):
+
+ ```html
+<div><img src="https://elephant-api.herokuapp.com/pictures/001.jpg" alt="Elephant picture"><img src="https://via.placeholder.com/250" alt="From the Mysore Dasara procession."><img src="https://via.placeholder.com/250" alt="Known for her tightrope walking act."></div>
+ ```
+
+ Formatted version (yours will probably look like the above version):
+
+ ```html
+<div>
+    <img src="https://elephant-api.herokuapp.com/pictures/001.jpg" alt="Elephant picture">
+    <img src="https://via.placeholder.com/250" alt="From the Mysore Dasara procession.">
+    <img src="https://via.placeholder.com/250" alt="Known for her tightrope walking act.">
+</div>
+ ```
+
+ > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-3/script.js).
+
+---
+
+<h5 class="question">Question 4</h5>
+
+We can use `fetch` to retrieve a list of results from an API call.
+
+<small>
+    Refer: 
+    <ul>
+        <li>
+            Fetch API - <a href="https://interactive-content.now.sh/javascript-1/3/2#fetch">JavaScript 1 Module 3 Lesson 2</a>
+        </li>
+        <li>
+            Displaying an array of results after an API call - <a href="https://interactive-content.now.sh/javascript-1/4/2">JavaScript 1 Module 4 Lesson 2</a>
+        </li>
+        <li>
+            CORS - <a href="https://interactive-content.now.sh/javascript-1/4/1">JavaScript 1 Module 4 Lesson 1</a>
+        </li>       
+    </ul>
+</small>
+
+Create an `.html` file that contains the following element:
+
+```html
+<div class="results"></div>
+```
+
+Make a call using `fetch` to this URL:
+
+```js
+https://elephant-api.herokuapp.com/elephants
+```
+
+You will need to add the cors-anywhere link to the beginning of the URL:
+
+```js
+https://cors-anywhere.herokuapp.com/
+```
+
+In the second then method of the fetch call, pass the returned json to a function called `createElephantNames`.
+
+The function should create a string of `h4` elements with the elephants' names as their text values. It should then set this to be the HTML property of the html element above.
+
+Add a check to see if the object contains a name before creating an `h4` element.
+
+ > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-4).
+
+---
+
+<h5 class="question">Question 6</h5>
+
+We can use string methods to validate form inputs.
+
+<small>
+    Refer: 
+    <ul>
+        <li>
+            Validatin forms - <a href="https://interactive-content.now.sh/javascript-1/4/1#validating-forms">JavaScript 1 Module 4 Lesson 1</a>
+        </li>       
+    </ul>
+</small>

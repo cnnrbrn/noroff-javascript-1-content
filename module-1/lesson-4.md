@@ -482,7 +482,7 @@ function makePlatforms(platformsArray) {
 }
 ```
 
-The funcgtion above will log each `name` value in the for loop.
+The function above will log each `name` value in the for loop.
 
 Like in the `makeGenres` function, let's create an HTML string in the loop and then return it:
 
