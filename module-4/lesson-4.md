@@ -1,5 +1,7 @@
 # Lesson 4 - Practice questions
 
+> Question 5 will be added shortly
+
 <h5 class="question">Question 1</h5>
 
 Looping through arrays of objects is important because that's how lists of results get returned from API calls.
@@ -245,3 +247,5 @@ Write code that checks the following when the form is submitted:
 - the the `message` textarea has a value that is at least 5 characters long
 
 Show/hide the appropriate error messages every time the validation runs. Remember to prevent the default behaviour of the form which is to submit the form and refresh the page.
+
+> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-1/script.js).
