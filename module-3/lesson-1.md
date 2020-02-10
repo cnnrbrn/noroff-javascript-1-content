@@ -315,6 +315,7 @@ Because that is the value of `this` in `myObject`'s scope (where `myObject` live
 
 The regular function `binds` its `this` value to its parent object, but the arrow function does not rebind its `this` value, it inherits it from the parent code.
 
+<a id="ternary"></a>
 
 ## A quick introduction to the ternary operator
 
