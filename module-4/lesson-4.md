@@ -186,7 +186,45 @@ Add a check to see if the object contains a name before creating an `h4` element
 
  > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-4).
 
+
 ---
+<!-- 
+<h5 class="question">Question 5</h5>
+
+We can use `fetch` to retrieve a specfic item from an API.
+
+<small>
+    Refer: 
+    <ul>
+        <li>
+            Fetching a specific item from an API - <a href="https://interactive-content.now.sh/javascript-1/3/4">JavaScript 1 Module 3 Lesson 4</a>
+        </li>       
+    </ul>
+</small>
+
+Create an `.html` file that contains the following HTML and CSS:
+
+```html
+<div class="elephant-container hidden">
+    <h1>Elephant name</h1>
+    <img src="https://via.placeholder.com/250" alt="Elephant name" />
+    <div class="note">Note content content goes here</div>
+</div>
+
+<div class="no-result hidden">
+    No elephant details were returned.
+</div>
+```
+
+```css
+.hidden {
+    display: none;
+}
+```
+
+The API endpoint below will return an array containing only one random elephant object. 
+
+--- -->
 
 <h5 class="question">Question 6</h5>
 
@@ -246,7 +284,7 @@ Write code that checks the following when the form is submitted:
 
 Show/hide the appropriate error messages every time the validation runs. Remember to prevent the default behaviour of the form which is to submit the form and refresh the page.
 
-> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-4).
+> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-6).
 
 ---
 - [Go to the module assignment](ma) 
