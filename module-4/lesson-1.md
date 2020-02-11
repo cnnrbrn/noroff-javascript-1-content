@@ -82,7 +82,7 @@ Now the API call will work.
 
 ## String manipulation and form validation
 
-We looked at the `replace()` method in [Lesson 4 of Module 3](../3/4)
+We looked at the `replace()` method in [Lesson 3 of Module 3](../3/3)
 
 We are going to look at two other methods here:
 
@@ -458,7 +458,7 @@ if (validateEmail(emailValue) === true) {
 This is now the email validation code:
 
 ```js
- const email = document.querySelector("#email");
+const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
 const invalidEmailError = document.querySelector("#invalidEmailError");
 
