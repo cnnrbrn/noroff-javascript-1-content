@@ -188,7 +188,7 @@ Add a check to see if the object contains a name before creating an `h4` element
 
 
 ---
-<!-- 
+
 <h5 class="question">Question 5</h5>
 
 We can use `fetch` to retrieve a specfic item from an API.
@@ -208,7 +208,7 @@ Create an `.html` file that contains the following HTML and CSS:
 <div class="elephant-container hidden">
     <h1>Elephant name</h1>
     <img src="https://via.placeholder.com/250" alt="Elephant name" />
-    <div class="note">Note content content goes here</div>
+    <div class="note">Note content goes here</div>
 </div>
 
 <div class="no-result hidden">
@@ -217,14 +217,31 @@ Create an `.html` file that contains the following HTML and CSS:
 ```
 
 ```css
+img {
+    max-width: 300px;
+}
+
 .hidden {
     display: none;
 }
 ```
 
-The API endpoint below will return an array containing only one random elephant object. 
+The API endpoint below will return an array containing either one random elephant object, or an array with an object containing only an id.
 
---- -->
+```
+https://elephant-api.herokuapp.com/elephants/random
+```
+
+Pass what is returned from the call to a function called `displayElephantDetails`.
+
+Inside this function, do one of two things:
+
+- if the object returned has all the required properties, replace the placeholder values in the div with the class `elephant-container` with these values and display the container div
+ - or, display the div with the class `.no-result`.
+
+(Inside the function, you can get the object from the array by its index).
+
+---
 
 <h5 class="question">Question 6</h5>
 
