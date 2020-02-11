@@ -241,6 +241,8 @@ Inside this function, do one of two things:
 
 (Inside the function, you can get the object from the array by its index).
 
+ > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-5).
+
 ---
 
 <h5 class="question">Question 6</h5>
