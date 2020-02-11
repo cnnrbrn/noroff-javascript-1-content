@@ -258,14 +258,14 @@ Check out [step-18](https://github.com/javascript-repositories/javascript-1-less
 
 ---
 
-A link to a contact page has been added in the nav, and in `contact.html` we've added a form with three inputs:
+A link to a contact page has been added in the nav, and in `contact.html` we've added a form with two inputs:
 
 - firstName
 - email
 
 A link to `js/contact.js` has been added at the bottom of `contact.html`.
 
-In `js/contact.js` lets write code to validate the form when the form is submitted.
+In `js/contact.js` let's write code to validate the form when the form is submitted.
 
 First we'll select the form:
 
