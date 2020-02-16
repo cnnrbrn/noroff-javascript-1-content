@@ -142,7 +142,7 @@ If all validation passes, add a message above the form indicating the form passe
 ## Submission
 
 - Create a repository in your GitHub account called `your-name-js1-ca`, e.g. `mary-smith-js1-ca`, and __make sure it's public__
-- If you downloaded the repository you can simply commit and push your code to your own repository
+- If you downloaded the repository you can simply commit and push your code to your repository
 - If you cloned the repository you can change the origin url so that pushes will be sent to your repo:
 
 ```js
