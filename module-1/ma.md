@@ -83,7 +83,7 @@ Using the function from question 8, add a `p` element containing the `age` prope
 
 Wrap the `h5` and `p` in a `div`.
 
-The function should return the following ():
+The function should return the following:
 
 ```html
 <div>
@@ -100,6 +100,11 @@ The function should return the following ():
 </div>
 ```
 
+It doesn't have to be formatted like that, yours will look more like a single string, similar to below:
+
+```html
+<div><h5>Blob</h5><p>10</p></div><div><h5>Harold</h5><p>Age unknown</p></div><div><h5>Blurt</h5><p>21</p></div>
+```
 ---
 
 ## Submission
