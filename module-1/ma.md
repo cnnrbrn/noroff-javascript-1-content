@@ -83,7 +83,7 @@ Using the function from question 8, add a `p` element containing the `age` prope
 
 Wrap the `h5` and `p` in a `div`.
 
-The function should return the following:
+The function should return the following ():
 
 ```html
 <div>
@@ -104,8 +104,8 @@ The function should return the following:
 
 ## Submission
 
-- Create a repository in your GitHub account called `js1-ma1` and __make sure it's public__
-- Create a file called `{your-name}-js1-ma1.js`, e.g. `mary-smith-js1-ma1.js`. This is the only file you need to submit.
+- Create a repository in your GitHub account called `your-name-js1-ma1`, e.g. mary-smith-js1-ma1, and __make sure it's public__
+- Create a file called `script.js`. This is the only file you need to submit.
 - Write your answers inside this file with a comment above each answer indicating the question number:
 
 
