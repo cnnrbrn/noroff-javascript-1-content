@@ -365,9 +365,6 @@ In the [next lesson](3) we will loop through an array of objects and create new 
 
 ## Acivities
 
-#### Read
-
-
 #### Watch
 
 [LinkedIn Learning: JavaScript Essential Training](https://www.linkedin.com/learning/javascript-essential-training-3/)
