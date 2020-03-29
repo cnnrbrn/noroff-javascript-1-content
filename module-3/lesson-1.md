@@ -194,7 +194,7 @@ const frog = {
 
 Create an IIFE that logs the current date and time. -->
 
-<h5 class="question">Question 5</h5>
+<h5 class="question">Question 3</h5>
 
 Convert the if statement below to use a ternary operator:
 
