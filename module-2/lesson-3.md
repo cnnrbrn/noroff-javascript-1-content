@@ -2,7 +2,6 @@
 
 Check out the [step-5](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-5) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to follow this lesson.
 
-
 ## Converting an if-else-if to a switch
 
 We looked at `switch` statements in Module 1, Lesson 3 of Programming Foundations, but we haven't coded one yet.
@@ -16,13 +15,11 @@ const buttonId = event.target.id;
 
 let arrayToLoopThrough = [];
 
-if(buttonId === "action") {
+if (buttonId === "action") {
     arrayToLoopThrough = actionGames;
-}
-else if (buttonId === "shooter") {
+} else if (buttonId === "shooter") {
     arrayToLoopThrough = shooterGames;
-}
-else if (buttonId === "rpg") {
+} else if (buttonId === "rpg") {
     arrayToLoopThrough = rpgGames;
 }
 ```
@@ -32,35 +29,31 @@ When you have multiple `else-if` statements, it's time to consider a `switch` st
 We begin a `switch` statement with the value we are checking in brackets. In this case we are checking the value of `buttonId`.
 
 ```js
-switch(buttonId) {
-
+switch (buttonId) {
 }
 ```
 
 We then create a `case` block for every value we want to check for. We'll add the check for `"action"` first:
 
 ```js
-switch(buttonId) {
-
+switch (buttonId) {
     case "action":
-        // do something if buttonID === "action"
+    // do something if buttonID === "action"
 }
 ```
 
 This is similar to writing:
 
 ```js
-if(buttonId === "action") {
+if (buttonId === "action") {
     // do something if buttonID === "action"
 }
 ```
 
 Let's make the array assignment inside the `case` block and then exit the switch with a `break` statement:
 
-
 ```js
-switch(buttonId) {
-
+switch (buttonId) {
     case "action":
         arrayToLoopThrough = actionGames;
         break;
@@ -72,8 +65,7 @@ If we don't use a `break` statement the code will keep going and move on to the 
 Let's add the other cases:
 
 ```js
-switch(buttonId) {
-
+switch (buttonId) {
     case "action":
         arrayToLoopThrough = actionGames;
         break;
@@ -93,8 +85,7 @@ We now have all the checks we previously had when using the `else-if` statements
 We need to add a `default` statement block in case the `buttonId` is not equal to any of those strings.
 
 ```js
-switch(buttonId) {
-
+switch (buttonId) {
     case "action":
         arrayToLoopThrough = actionGames;
         break;
@@ -106,7 +97,7 @@ switch(buttonId) {
     case "rpg":
         arrayToLoopThrough = rpgGames;
         break;
-    
+
     default:
         // if buttonId is not equal to any of "action", "shooter" or "rpg", assign an empty array to arrayToLoopThrough
         arrayToLoopThrough = [];
@@ -124,8 +115,7 @@ const buttonId = event.target.id;
 
 let arrayToLoopThrough;
 
-switch(buttonId) {
-
+switch (buttonId) {
     case "action":
         arrayToLoopThrough = actionGames;
         break;
@@ -137,7 +127,7 @@ switch(buttonId) {
     case "rpg":
         arrayToLoopThrough = rpgGames;
         break;
-    
+
     default:
         arrayToLoopThrough = [];
 }
@@ -148,6 +138,7 @@ If we didn't add the `break` statements, the code would keep "falling through" t
 > If you find yourself with a `return` statement inside a case block, you don't need the `break` statement as the `return` will exit the switch. Remember, no code after a `return` statement will get called.
 >
 > The break statement here will never be reached:
+>
 > ```js
 > case "action":
 >   return true;
@@ -167,7 +158,7 @@ If we wanted to add a data attribute to the buttons to store their genre informa
 The value of the attribute is assigned using an equals sign like any other attribute:
 
 ```js
-data-genre="action"
+data - genre = "action";
 ```
 
 Let's add a `data-genre` attribute to each button:
@@ -203,6 +194,7 @@ We can add as many data attributes as we like. Let's add two more to the shooter
 ```html
 <button class="btn btn-secondary" data-genre="shooter" data-pet="dog" data-numberOfGames="12" id="shooter">Load shooter games</button>
 ```
+
 If we log `shooterButton.dataset` now we'll see three data properties:
 
 ```js
@@ -242,11 +234,10 @@ Replace it with:
 const genre = event.target.dataset.genre;
 ```
 
-- `event` - the click event
-- `target` - the element the event happened on
-- `dataset` - the data attributes on the element
-- `genre` - the value of the `data-genre` attribute
-
+-   `event` - the click event
+-   `target` - the element the event happened on
+-   `dataset` - the data attributes on the element
+-   `genre` - the value of the `data-genre` attribute
 
 Now we need to change the variable the switch statement is checking from `buttonId` to `genre`:
 
@@ -259,11 +250,10 @@ The full switch code:
 ```js
 // get genre value from the data-genre attribute
 const genre = event.target.dataset.genre;
-   
+
 let arrayToLoopThrough;
 
-switch(genre) {
-
+switch (genre) {
     case "action":
         arrayToLoopThrough = actionGames;
         break;
@@ -275,7 +265,7 @@ switch(genre) {
     case "rpg":
         arrayToLoopThrough = rpgGames;
         break;
-    
+
     default:
         arrayToLoopThrough = [];
 }
@@ -301,14 +291,14 @@ To avoid having a very long `script.js` file, we've moved the code that selects 
 <script src="js/buttons.js"></script>
 ```
 
-> We need to load `js/buttons.js` after `js/script.js` so that we can call the `loadGames` function from `js/buttons.js`. We saw in lesson 1 of this module that JavaScript uses `hoisting` to lift function declarations to the top of the code, no matter where they are placed by the developer, but this doesn't apply to code loaded in different script files.
+> We need to load `js/buttons.js` after `js/script.js` so that we can call the `loadGames` function from `js/buttons.js`.
 
 `js/buttons.js` now contains the code below, and we'll add the `active` class code in this file:
 
 ```js
 const buttons = document.querySelectorAll(".btn.btn-secondary");
 
-for(let i = 0; i < buttons.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", loadGames);
 }
 ```
@@ -321,24 +311,24 @@ Let's select the action games button.
 
 ```js
 const actionButton = document.querySelector("[data-genre='action']");
-console.log(actionButton)
+console.log(actionButton);
 // <button class="btn btn-secondary" data-genre="action">Load action games</button>
 ```
 
-The selector string is wrapped in square brackets and its value is in single quotes because the entire selector string uses double quotes. 
+The selector string is wrapped in square brackets and its value is in single quotes because the entire selector string uses double quotes.
 
 To select the RPG button we would change the value from `action` to `rpg`:
 
 ```js
 const rpgButton = document.querySelector("[data-genre='rpg']");
-console.log(actionButton)
+console.log(actionButton);
 // <button class="btn btn-secondary" data-genre="rpg">Load RPG games</button>
 ```
 
 If we log `actionButton`'s `classList` property we can see it has two classes, `btn` and `btn-secondary`.
 
 ```js
-console.dir(actionButton.classList)
+console.dir(actionButton.classList);
 // value: "btn btn-secondary"
 // 0: "btn"
 // 1: "btn-secondary"
@@ -354,7 +344,7 @@ actionButton.classList.add("active");
 If we log `actionButton`'s `classList` property now we'd see the `active` class has been added:
 
 ```js
-console.dir(actionButton.classList)
+console.dir(actionButton.classList);
 // value: "btn btn-secondary active"
 // 0: "btn"
 // 1: "btn-secondary"
@@ -380,7 +370,7 @@ buttons[i].addEventListener("click", handleActiveClass);
 Full for loop code:
 
 ```js
-for(let i = 0; i < buttons.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", loadGames);
     buttons[i].addEventListener("click", handleActiveClass);
 }
@@ -404,7 +394,7 @@ function handleActiveClass(event) {
 }
 ```
 
-`event.target` will give us the button that was clicked, and above we used `classList.add("active")` to add the `active` class. 
+`event.target` will give us the button that was clicked, and above we used `classList.add("active")` to add the `active` class.
 
 If we combine those, every button that is clicked will receive the `active` class:
 
@@ -419,11 +409,10 @@ Full code in `js/buttons.js`:
 ```js
 const buttons = document.querySelectorAll(".btn.btn-secondary");
 
-for(let i = 0; i < buttons.length; i++) {
+for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", loadGames);
     buttons[i].addEventListener("click", handleActiveClass);
 }
-
 
 function handleActiveClass(event) {
     event.target.classList.add("active");
@@ -444,8 +433,7 @@ Inside the `handleActiveClass` function, we can loop through the buttons and, us
 
 ```js
 function handleActiveClass(event) {
-
-    for(let i = 0; i < buttons.length; i++) {
+    for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.remove("active");
     }
 
@@ -464,5 +452,7 @@ Then, using `event.target`, the button that was just clicked will have the class
 YouTube: [Switch statements](https://www.youtube.com/watch?v=UeXDAu7SdmY)
 
 ---
-- [Go to lesson 4](4) 
+
+-   [Go to lesson 4](4)
+
 ---

@@ -11,17 +11,20 @@ We will get back to coding in lesson 2.
 In JavaScript, an expression is any code that evaluates (or resolves) to a value.
 
 There are two types of expressions:
-- those that assign a value to a variable
-- those that just have a value without assigning it
+
+-   those that assign a value to a variable
+-   those that just have a value without assigning it
 
 This is an example of the first type, where the `number` value `10` gets assigned to variable called `y`.
+
 ```js
-const y = 10
+const y = 10;
 ```
 
 This is an example of the second type, where the expression evaluates to `10`, but doesn't get assigned to a variable.
+
 ```js
-5 + 5
+5 + 5;
 ```
 
 This another example of the first type, where the value assigned to the variable is a `function`.
@@ -29,11 +32,10 @@ This another example of the first type, where the value assigned to the variable
 ```js
 const y = function() {
     // do some stuff
-}
+};
 ```
 
 Here is another example of the second type, where the value the expression resolves to is a `function`, but doesn't get assigned to a variable:
-
 
 ```js
 function() {
@@ -42,15 +44,15 @@ function() {
 
 
 ```
+
 ## Function declarations vs function expressions
 
 So far when we have used functions, we have `declared` them:
 
 ```js
 function doSomething() {
-   // do something here
+    // do something here
 }
-
 ```
 
 This is called a `function declaration` and it creates a `named function` - the function has a name: `doSomething`.
@@ -74,7 +76,7 @@ This is, as we saw above, an expression, and it's value is a function. It's a `f
 We can assign the function expression to a variable:
 
 ```js
-const myValueIsAFunction = function () {
+const myValueIsAFunction = function() {
     console.log("I don't have a name");
 };
 ```
@@ -85,63 +87,6 @@ The variable `myValueIsAFunction` has a function as its value, and it can be cal
 myValueIsAFunction();
 // I don't have a name
 ```
-
-
-## IIFE
-
-IIFE stands for `I`nstantly `I`nvoked `F`unction `E`xpression.
-
-In programming, `invoke` is another word for `call`.
-
-We saw above that this is what a `function expression` may look like:
-
-```js
-function() {
-    console.log("Hi!");
-}
-```
-
-To call a function we use round brackets - parenthesis - `()`, and we can call an anonymous function expression by wrapping it in round brackets and using parenthesis to call it:
-
-```js
-(function() {
-    console.log("Hi!");
-})();
-```
-
-## Hoisting
-
-Function declarations are "lifted up" - hoisted - by the JavaScript engine to the top of the code, no matter where they are written. This makes them available to be called from anywhere, including before they are declared.
-
-In the code below, we can call the `doSomething` function before it's declared.
-
-```js
-aDeclaredFunction();
-
-function aDeclaredFunction() {
-    console.log("I am a declared function");
-}
-```
-
-Function expressions are not hoisted, they are not lifted up from where they are written in the code, so you can't do this:
-
-```js
-
-aFunctionExpression();
-
-const aFunctionExpression = function() {
-    console.log("I am a function expression");
-};
-```
-
-The above code produces the following error:
-
-```js
-Uncaught ReferenceError: Cannot access 'aFunctionExpression' before initialization
-```
-
-You need to create function expressions before you use them.
-
 
 ## Callback functions - functions as arguments
 
@@ -195,6 +140,7 @@ logTheArgument(function() {
 The code above logs the function, prints the function definition itself out, but doesn't call it, so the function is not executed.
 
 The function itself gets displayed in the console:
+
 ```js
 ƒ () {
     console.log("I am in the anonymous function");
@@ -202,17 +148,18 @@ The function itself gets displayed in the console:
 ```
 
 If we change this line
+
 ```js
 console.log(someFunction);
 ```
 
 to this
+
 ```js
 someFunction();
 ```
 
 the function will be called (we're using round brackets to call the function that's passed in like we would call any function).
-
 
 ```js
 function logTheArgument(someFunction) {
@@ -233,7 +180,6 @@ This time the function is called, and the console log is executed and prints its
 
 This might be better explained with an `alert`:
 
-
 ```js
 function logTheArgument(someFunction) {
     alert(someFunction);
@@ -247,7 +193,7 @@ logTheArgument(function() {
 
 If you run this code, the function definition is displayed in an alert window.
 
-Change this 
+Change this
 
 ```js
 alert(someFunction);
@@ -296,7 +242,7 @@ You can also declare a function and then pass it in:
 // declare the function
 function myFunction() {
     console.log("I am in the function stored in the variable");
-};
+}
 ```
 
 Full example:
@@ -309,7 +255,7 @@ function logTheArgument(someFunction) {
 // declare the function
 function myFunction() {
     console.log("I am in the function stored in the variable");
-};
+}
 
 // call the logTheArgument function and pass in the declared function
 logTheArgument(myFunction);
@@ -319,13 +265,11 @@ Use whichever method you find easiest to read and write.
 
 ---
 
-
 ## Acivities
 
 #### Read
 
 medium.com: [Function Declarations vs Function Expressions](https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052)
-
 
 #### Watch
 
@@ -335,10 +279,10 @@ Watch the following videos:
 
 Section 4. Functions and Objects:
 
-- Anonymous functions
-- Immediately invoked functional expressions
-
+-   Anonymous functions
 
 ---
-- [Go to lesson 2](2) 
+
+-   [Go to lesson 2](2)
+
 ---
