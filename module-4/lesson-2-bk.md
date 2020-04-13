@@ -2,7 +2,7 @@
 
 There are no new concepts introduced in this lesson.
 
-Instead, we are going to practise fetching an array of results from an API and creating HTML from the returned data.
+Instead, we are going to practise fetching an array of results from the elephant API and create HTML from the returned data.
 
 ---
 
@@ -27,7 +27,7 @@ const creatorsUrl = "https://api.rawg.io/api/creators";
 Then we'll use that variable in the `fetch` call:
 
 ```js
-fetch(creatorsUrl)
+fetch(creatorsUrl);
 ```
 
 > We will use regular functions inside the `then` methods. Example code using arrow functions in the `then` and `catch` methods will be provided at the end of the lesson.
@@ -37,10 +37,9 @@ We need to provide a function to the `then` method to handle the response from t
 Previously we sent an anonymous function directly in to the then:
 
 ```js
-fetch(creatorsUrl)
-    .then(function(response) {
-        return response.json();
-    })
+fetch(creatorsUrl).then(function (response) {
+    return response.json();
+});
 ```
 
 We could create a named function and use that in the then instead:
@@ -50,16 +49,15 @@ function handleResponse(response) {
     return response.json();
 }
 
-fetch(creatorsUrl)
-    .then(handleResponse)
+fetch(creatorsUrl).then(handleResponse);
 ```
 
-This will achieve exactly the same result: 
+This will achieve exactly the same result:
 
-- the function will receive an argument (we've called it `response` because that makes sense, but because it's a normal argument we could call it anything)
-- the `json()` method is called on the response argument. This method turns the response into a `json` object that we can use in our code
-- this `json` object is returned from the function
-- it is this return value that gets sent to the function in the next `then` method
+-   the function will receive an argument (we've called it `response` because that makes sense, but because it's a normal argument we could call it anything)
+-   the `json()` method is called on the response argument. This method turns the response into a `json` object that we can use in our code
+-   this `json` object is returned from the function
+-   it is this return value that gets sent to the function in the next `then` method
 
 We need to send a function in to the second then.
 
@@ -87,12 +85,12 @@ Using anonymous functions:
 
 ```js
 fetch(creatorsUrl)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
         console.log(json);
-    })
+    });
 ```
 
 Or using named functions
@@ -106,9 +104,7 @@ function handleJson(json) {
     console.dir(json);
 }
 
-fetch(creatorsUrl)
-    .then(handleResponse)
-    .then(handleJson)
+fetch(creatorsUrl).then(handleResponse).then(handleJson);
 ```
 
 Any errors that happen during the API call or in the functions we provide to the then methods can be handled in a `catch` block.
@@ -137,13 +133,13 @@ Now the code would look one of these two ways:
 
 ```js
 fetch(creatorsUrl)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
         console.log(json);
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log(error);
     });
 ```
@@ -163,10 +159,7 @@ function handleError(error) {
     console.log(error);
 }
 
-fetch(creatorsUrl)
-    .then(handleResponse)
-    .then(handleJson)
-    .catch(handleError);
+fetch(creatorsUrl).then(handleResponse).then(handleJson).catch(handleError);
 ```
 
 The json object that is received by the function in the second then will contain the data we need to loop through.
@@ -177,13 +170,13 @@ If we are using the anonymous function approach we can simply call the `handleJs
 
 ```js
 fetch(creatorsUrl)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
         handleJson(json);
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log(error);
     });
 ```
@@ -206,14 +199,12 @@ There is a property called `results` whose value is an array of objects. This is
 
 > You need to inspect the data from an API call to see what you need to retrieve from it. All REST APIs will return JSON, but they will return it differently - you can't assume other APIs will return their data on a property called `results`.
 
-
 We'll assign `json.results` to a variable and then loop through it and log each `name` property in the objects.
 
 > Refer to [Programing Foundations Module 2 Lesson 3](https://interactive-content.now.sh/programming-foundations/2/3) for info on looping through arrays of objects using `for loops`
 
 ```js
 function handleJson(json) {
-
     const results = json.results;
 
     for (let i = 0; i < results.length; i++) {
@@ -228,13 +219,11 @@ Let's change the `for loop` to a `forEach` which arguably has a cleaner syntax.
 
 ```js
 function handleJson(json) {
-
     const results = json.results;
 
-    results.forEach(function(result) {
+    results.forEach(function (result) {
         console.log(result.name);
     });
-
 }
 ```
 
@@ -266,7 +255,7 @@ We'll then declare a variable to hold the HTML we create, and then keeping addin
 ```js
 let html = "";
 
-results.forEach(function(result) {
+results.forEach(function (result) {
     html += `<div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <div class="image creator" style="background-image: url('https://via.placeholder.com/250');"></div>
@@ -290,15 +279,14 @@ Full code for the `handleJson` function so far:
 
 ```js
 function handleJson(json) {
-
     const results = json.results;
-    console.dir(results);    
+    console.dir(results);
 
     const resultsContainer = document.querySelector(".row.results");
 
     let html = "";
 
-    results.forEach(function(result) {
+    results.forEach(function (result) {
         html += `<div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <div class="image creator" style="background-image: url('https://via.placeholder.com/250');"></div>
@@ -321,16 +309,16 @@ Because there 10 objects in the `results` array, 10 cards are now displayed on t
 
 Let's populate the HTML with variables from the `results` objects:
 
-- `result.image` for the background image
-- `result.name` for the name
-- `result.games_count` for the games count
-- `result.id` for the id in the query string of the `Details` link
+-   `result.image` for the background image
+-   `result.name` for the name
+-   `result.games_count` for the games count
+-   `result.id` for the id in the query string of the `Details` link
 
 We'll embed the variables in the string using `${}`.
 
 ```js
-results.forEach(function(result) {
-        html += `<div class="col-sm-6 col-md-4 col-lg-3">
+results.forEach(function (result) {
+    html += `<div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <div class="image creator" style="background-image: url('${result.image}');"></div>
                         <div class="details">
@@ -340,7 +328,7 @@ results.forEach(function(result) {
                         </div>
                     </div>
                 </div>`;
-    });
+});
 ```
 
 Now the cards are populated by real data and images and the Details tag links to a `creator-detail.html` page with an `id` in the query string. We'll create this page in [Lesson 3](3).
@@ -356,7 +344,7 @@ function handleJson(json) {
 
     let html = "";
 
-    results.forEach(function(result) {
+    results.forEach(function (result) {
         html += `<div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="card">
                         <div class="image creator" style="background-image: url('${result.image}');"></div>
@@ -384,7 +372,7 @@ const creatorsUrl = "https://api.rawg.io/api/creators?page=2";
 If you inspect the JSON returned from this call, you'll see the first object has a missing `image` property, it's set to `null`
 
 ```js
-image: null
+image: null;
 ```
 
 The card therefore has a missing image.
@@ -419,13 +407,13 @@ Full code in `js/creators.js`:
 const creatorsUrl = "https://api.rawg.io/api/creators?page=2";
 
 fetch(creatorsUrl)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
         handleJson(json);
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log(error);
     });
 
@@ -437,7 +425,7 @@ function handleJson(json) {
 
     let html = "";
 
-    results.forEach(function(result) {
+    results.forEach(function (result) {
         let imageUrl = "https://via.placeholder.com/250";
 
         if (result.image) {
@@ -472,7 +460,7 @@ In `creators.html` we'll replace the example card HTML with the loader div.
 
 Branch [step-22](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-22) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
 
---- 
+---
 
 The fetch call using arrow functions would look like this:
 
@@ -489,10 +477,12 @@ fetch(creatorsUrl)
 
 ## Code improvement practice
 
-Instead of displaying a placeholder image if the `image` property is missing, check if the `result` object has an `image_background` property and display that instead. If both are missing the placeholder image will be displayed. 
+Instead of displaying a placeholder image if the `image` property is missing, check if the `result` object has an `image_background` property and display that instead. If both are missing the placeholder image will be displayed.
 
 You can find the example code for this in [step-23](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-23).
 
 ---
-- [Go to lesson 3](3) 
+
+-   [Go to lesson 3](3)
+
 ---
