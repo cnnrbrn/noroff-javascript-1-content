@@ -1,4 +1,3 @@
-
 # Module Assignment 4
 
 ## Level 1
@@ -13,7 +12,7 @@ Add the following HTML and CSS to a page called `question1.html`.
     <div>
         <input type="text" id="firstName" placeholder="First name (minimum 2 characters)" />
         <div id="firstNameError" class="error">Your first name must be at least 2 characters</div>
-    </div> 
+    </div>
     <div>
         <button type="submit">Submit</button>
     </div>
@@ -50,11 +49,11 @@ For each game object in the results, the `createGames` function should create th
 ```html
 <div class="game">
     <h2>Name of game</h2>
-    <img src="/path/to/image" alt="Name of game">
+    <img src="/path/to/image" alt="Name of game" />
 </div>
 ```
 
-After the loop, all the HTML that was created should be assigned as the `innerHTML` value to the element above.
+After the loop, all the HTML that was created should be assigned as the `innerHTML` value to the div with the `results` class.
 
 ---
 
@@ -95,17 +94,16 @@ Use either the `background_image` or `background_image_additional` property as t
 
 ## Submission
 
-- Create a repository in your GitHub account called `{your-name}-js1-ma4`, e.g. `mary-smith-js1-ma4`, and __make sure it's public__
-- Create an `.html` file and a `.js` file for each question
-    - question1.html
-    - question2.html
-    - question3.html
-    - /js/question1.js
-    - /js/question2.js
-    - /js/question3.js
+-   Create a repository in your GitHub account called `{your-name}-js1-ma4`, e.g. `mary-smith-js1-ma4`, and **make sure it's public**
+-   Create an `.html` file and a `.js` file for each question
+    -   question1.html
+    -   question2.html
+    -   question3.html
+    -   /js/question1.js
+    -   /js/question2.js
+    -   /js/question3.js
 
 You can also add `.css` files or add the styles on the page with `<style>` tags.
 
-- Add, commit and push these files to your repo
-- Submit the repo link
-
+-   Add, commit and push these files to your repo
+-   Submit the repo link

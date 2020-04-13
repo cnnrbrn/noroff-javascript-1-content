@@ -1,310 +1,393 @@
-# Lesson 4 - Practice questions
+# Lesson 4 - String manipulation and form validation
 
-<h5 class="question">Question 1</h5>
+We looked at the `replace()` method in [Lesson 3 of Module 3](../3/3)
 
-Looping through arrays of objects is important because that's how lists of results get returned from API calls.
+We are going to look at two other methods here:
 
----
+-   `length`
+-   `trim`
 
-<small>
-    Refer: 
-    <ul>
-        <li>
-            Loops - <a href="https://interactive-content.now.sh/programming-foundations/1/4">Programming Foundations Module 1 Lesson 4</a>
-        </li>
-        <li>
-            Arrays of objects - <a href="https://interactive-content.now.sh/programming-foundations/2/3">Programming Foundations Module 2 Lesson 4</a>
-        </li>
-        <li>
-            forEach - <a href="https://interactive-content.now.sh/javascript-1/2/4">JavaScript 1 Module 2 Lesson 4</a>
-        </li>
-    </ul>
-</small>
+### length
 
-Loop through the array below (with a `for` loop or a `forEach` loop) and log each property's age value. Log `"Unknown"` if it is missing.
+The `length` property can be used to find the number of characters - the length - of a string.
 
 ```js
-const cars = [
-    {
-        type: "BMW",
-        age: 4,
-        beenInAccident: false
-    },
-    {
-        type: "Toyota",
-        beenInAccident: true
-    },
-    {
-        type: "Ford",
-        beenInAccident: true
+const greeting = "Hello";
+const lengthOfGreeting = greeting.length;
+console.log(lengthOfGreeting);
+// 5
+```
+
+An empty string returns a length of `0`:
+
+```js
+const emptyString = "";
+console.log(emptyString.length);
+// 0
+```
+
+Blank spaces are counted as part of the length of the string:
+
+```js
+const spaceTest = "a b";
+console.log(spaceTest.length);
+// 3
+
+const blankSpace = " ";
+console.log(blankSpace.length);
+// 1
+```
+
+A common use for the `length` property is to check the length of the value a user types in to a text input.
+
+Sometimes an input needs to have a minimum or maximum number of characters, or sometimes the input is simply required - it must have at least one character.
+
+Let's select the `firstName` input below and log it's value using a `keyup` event.
+
+```html
+<input type="text" id="firstName" />
+```
+
+Let's get the input by its `id`:
+
+```js
+const firstName = document.querySelector("#firstName");
+```
+
+Now we'll add `keyup` event listener and log the length of the value in the input:
+
+```js
+firstName.addEventListener("keyup", logLength);
+
+function logLength(event) {
+    const inputValue = event.target.value;
+    const valueLength = inputValue.length;
+    console.log(valueLength);
+
+    // we could skip the variables and write it this way
+    console.log(event.target.value.length);
+}
+```
+
+If you run the code above the number of characters (the length) of what you type in the input will be logged. If you delete eveything in the input, `0` will be logged.
+
+Let's change the code to log whether or not the input has a value. We can do this by checking if the length is greater than 0.
+
+```js
+firstName.addEventListener("keyup", checkLength);
+
+function checkLength(event) {
+    const inputValue = event.target.value;
+    const valueLength = inputValue.length;
+
+    if (valueLength > 0) {
+        console.log("The input has a value");
+    } else {
+        console.log("The input does not have a value");
     }
-];
-```
-> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-1/script.js).
-
----
-
-<h5 class="question">Question 2</h5>
-
-Functions allow us to create reusable code. We can return values from functions and assign those return values to variables.
-
-<small>
-    Refer: 
-    <ul>
-        <li>
-            Functions - <a href="https://interactive-content.now.sh/programming-foundations/2/4">Programming Foundations Module 2 Lesson 4</a>
-        </li>
-        <li>
-            Creating HTML from arrays of objects - <a href="https://interactive-content.now.sh/javascript-1/1/3">JavaScript 1 Module 1 Lesson 3</a>
-        </li>
-        <li>
-             Creating HTML in functions - <a href="https://interactive-content.now.sh/javascript-1/1/4">JavaScript 1 Module 1 Lesson 4</a>
-        </li>
-    </ul>
-</small>
-
-```js
-const elephants = [
-    { image: "https://elephant-api.herokuapp.com/pictures/001.jpg", note: "Given to a Carolingian emperor." },
-    { image: "https://elephant-api.herokuapp.com/pictures/missing.jpg", note: "From the Mysore Dasara procession." },
-    { image: "https://elephant-api.herokuapp.com/pictures/missing.jpg", note: "Known for her tightrope walking act." }
-];
-```
-
-Create a function that receives one argument. When you call the function pass the `elephants` array above into the function.
-
-Inside the function, loop through the array and create an `img` tag for each object, with `src` and `alt` attributes created from the properties in each object.
-
-Return the created HTML from the function.
-
-Assign the return value of the function to a variable and console log it.
-
-It will look similar to this (though it will be one long string).
-
-```js
-<img src="https://elephant-api.herokuapp.com/pictures/001.jpg" alt="Given to a Carolingian emperor.">
-<img src="https://elephant-api.herokuapp.com/pictures/missing.jpg" alt="From the Mysore Dasara procession.">
-<img src="https://elephant-api.herokuapp.com/pictures/missing.jpg" alt="Known for her tightrope walking act.">
-```
-
-> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-2/script.js).
-
----
-
-<h5 class="question">Question 3</h5>
-
-We can provide default values for missing object properties.
-
-<small>
-    Refer: 
-    <ul>
-        <li>
-            Default values for missing properties - <a href="https://interactive-content.now.sh/javascript-1/1/3#default-values">JavaScript 1 Module 1 Lesson 3</a>
-        </li>       
-    </ul>
-</small>
-
-```js
-const elephants = [
-    { image: "https://elephant-api.herokuapp.com/pictures/001.jpg", note: null},
-    { note: "From the Mysore Dasara procession." },
-    { image: null, note: "Known for her tightrope walking act." }
-];
-```
-
-The array above contains objects missing certain properties or with their values set to null.
-
-Write a function with code similar to question 2 but provide the following default values for missing properties:
-
- - `src`  - https://via.placeholder.com/250
- - `alt` - "Elephant picture"
-
-Wrap all the `img` tags in a `div` tag.
-
-The function should return an HTML string similar to this (without the indentation):
-
- ```html
-<div><img src="https://elephant-api.herokuapp.com/pictures/001.jpg" alt="Elephant picture"><img src="https://via.placeholder.com/250" alt="From the Mysore Dasara procession."><img src="https://via.placeholder.com/250" alt="Known for her tightrope walking act."></div>
- ```
-
- Formatted version (yours will probably look like the above version):
-
- ```html
-<div>
-    <img src="https://elephant-api.herokuapp.com/pictures/001.jpg" alt="Elephant picture">
-    <img src="https://via.placeholder.com/250" alt="From the Mysore Dasara procession.">
-    <img src="https://via.placeholder.com/250" alt="Known for her tightrope walking act.">
-</div>
- ```
-
- > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/blob/module-4-lesson-4-question-3/script.js).
-
----
-
-<h5 class="question">Question 4</h5>
-
-We can use `fetch` to retrieve a list of results from an API call.
-
-<small>
-    Refer: 
-    <ul>
-        <li>
-            Fetch API - <a href="https://interactive-content.now.sh/javascript-1/3/2#fetch">JavaScript 1 Module 3 Lesson 2</a>
-        </li>
-        <li>
-            Displaying an array of results after an API call - <a href="https://interactive-content.now.sh/javascript-1/4/2">JavaScript 1 Module 4 Lesson 2</a>
-        </li>
-        <li>
-            CORS - <a href="https://interactive-content.now.sh/javascript-1/4/1">JavaScript 1 Module 4 Lesson 1</a>
-        </li>       
-    </ul>
-</small>
-
-Create an `.html` file that contains the following element:
-
-```html
-<div class="results"></div>
-```
-
-Make a call to this URL:
-
-```js
-https://elephant-api.herokuapp.com/elephants
-```
-
-You will need to add the cors-anywhere link to the beginning of the URL:
-
-```js
-https://cors-anywhere.herokuapp.com/
-```
-
-In the second then method of the fetch call, pass the returned json to a function called `createElephantNames`.
-
-The function should create a string of `h4` elements with the elephants' names as their text values. It should then set this to be the HTML property of the html element above.
-
-Add a check to see if the object contains a name before creating an `h4` element.
-
- > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-4).
-
-
----
-
-<h5 class="question">Question 5</h5>
-
-We can use `fetch` to retrieve a specfic item from an API.
-
-<small>
-    Refer: 
-    <ul>
-        <li>
-            Fetching a specific item from an API - <a href="https://interactive-content.now.sh/javascript-1/3/4">JavaScript 1 Module 3 Lesson 4</a>
-        </li>       
-    </ul>
-</small>
-
-Create an `.html` file that contains the following HTML and CSS:
-
-```html
-<div class="elephant-container hidden">
-    <h1>Elephant name</h1>
-    <img src="https://via.placeholder.com/250" alt="Elephant name" />
-    <div class="note">Note content goes here</div>
-</div>
-
-<div class="no-result hidden">
-    No elephant details were returned.
-</div>
-```
-
-```css
-img {
-    max-width: 300px;
-}
-
-.hidden {
-    display: none;
 }
 ```
 
-The API endpoint below will return an array containing either one random elephant object, or an array with an object containing only an id.
+If we wanted to check if a field was required - that it had a length greater than 0 - we could use something like the above code.
 
+There is a problem though. If you typed only a space or spaces into the input, the code above would log that the input had a value, but empty spaces are not useful as user input in the real world.
+
+We can use the `trim` method to remove spaces.
+
+### trim
+
+The `trim` method removes spaces from the beginning and end of a string, but doesn't remove spaces between words.
+
+The string below has a space at the beginning and the end.
+
+```js
+const firstName = " Burt ";
 ```
-https://elephant-api.herokuapp.com/elephants/random
+
+If we log its value it will return `6`:
+
+```js
+console.log(firstName.length);
+// 6
 ```
 
-Pass what is returned from the call to a function called `displayElephantDetails`.
+We can use the `trim` method to remove the spaces:
 
-Inside this function, do one of two things:
+```js
+const trimmedName = firstName.trim();
+```
 
-- if the object returned has all the required properties, replace the placeholder values in the div with the class `elephant-container` with these values and display the container div
- - or, display the div with the class `.no-result`.
+Now the `length` property will return `4`:
 
-(Inside the function, you can get the object from the array by its index).
+```js
+console.log(trimmedName.length);
+// 4
+```
 
- > The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-5).
+If we use trim on a string with more than one word, the spaces between words don't get removed:
+
+```js
+const sentence = "a dog ";
+console.log(sentence.length);
+// 6
+
+const trimmedSentence = sentence.trim();
+console.log(trimmedSentence.length);
+// 5
+```
+
+If a string has only space in it, trim will ensure the length property returns `0`. This time we'll `chain` the `length` property on to the `trim` method without assigning the trimmed value to a variable first:
+
+```js
+const space = " ";
+console.log(space.length);
+// 1
+
+console.log(space.trim().length);
+// 0
+```
+
+Let's update the `checkLength` function to use `trim`:
+
+```js
+const firstName = document.querySelector("#firstName");
+
+firstName.addEventListener("keyup", checkLength);
+
+function checkLength(event) {
+    const inputValue = event.target.value.trim();
+    const valueLength = inputValue.length;
+
+    if (valueLength > 0) {
+        console.log("The input has a value");
+    } else {
+        console.log("The input does not have a value");
+    }
+}
+```
+
+Now values with only spaces won't pass the length test.
 
 ---
 
-<h5 class="question">Question 6</h5>
-
-We can use string methods to validate form inputs.
-
-<small>
-    Refer: 
-    <ul>
-        <li>
-            Validating forms - <a href="https://interactive-content.now.sh/javascript-1/4/1#validating-forms">JavaScript 1 Module 4 Lesson 1</a>
-        </li>       
-    </ul>
-</small>
-
-Add the following HTML and CSS to a page.
-
-```html
-<form>
-    <div>
-        <input type="text" id="firstName" placeholder="First name" />
-        <div id="firstNameError" class="error">Please enter your first name</div>
-    </div>
-    <div>
-        <input type="text" id="email" placeholder="Email address" />
-        <div id="emailError" class="error">Please enter your email address</div>
-        <div id="invalidEmailError" class="error">Please enter a valid email address</div>
-    </div>
-    <div>
-        <textarea id="message"></textarea>
-        <div id="messageError" class="error">Your message must be at least five characters long</div>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-</form>
-```
-
-```css
-.error {
-    color: red;
-    display: none;
-}
-
-input,
-textarea {
-    width: 200px;
-    padding: 10px;
-    margin-top: 5px;
-}
-```
-
-Write code that checks the following when the form is submitted:
-
-- that the `firstName` input has a value
-- that the `email` input has a value and is an email address
-- the the `message` textarea has a value that is at least 5 characters long
-
-Show/hide the appropriate error messages every time the validation runs. Remember to prevent the default behaviour of the form which is to submit the form and refresh the page.
-
-> The answer can be found [here](https://github.com/javascript-repositories/js1-lesson-answers/tree/module-4-lesson-4-question-6).
+Check out [step-18](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-18) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to continue the lesson.
 
 ---
-- [Go to the module assignment](ma) 
+
+A link to a contact page has been added in the nav, and in `contact.html` we've added a form with two inputs:
+
+-   firstName
+-   email
+
+A link to `js/contact.js` has been added at the bottom of `contact.html`.
+
+In `js/contact.js` let's write code to validate the form when the form is submitted.
+
+First we'll select the form:
+
+```js
+const form = document.querySelector("#contactForm");
+```
+
+The event we want to listen for is the `submit` event. We'll pass in a function called `validateForm` when the submit event happens.
+
+```js
+form.addEventListener("submit", validateForm);
+```
+
+Let's write `validateForm` function.
+
+```js
+function validateForm(event) {
+    console.log("The form was submitted");
+}
+```
+
+If you add code above and then click the submit button, the console message will briefly appear but because when a form is submitted the page gets reloaded, the message will disapear as the page refreshes.
+
+After the form is submitted you'll see parameters have been added to the query string:
+
+```js
+http://127.0.0.1:5502/contact.html?firstName=&email=
+```
+
+This is how forms submit their input values when they don't have a `method` attribute set - they use the default method which is the `GET` method. Using this method all the input names and values get added to the query string.
+
+If we add a `method` attribute to the form and give it a value of `POST`, the values won't be added to the query string and forms are usually submitted using the `POST` method.
+
+We won't be submitting any values to a server, but need to prevent the browser's default behaviour of reloading the page when a form gets submitted. Otherwise none of the JavaScript we write will run as the page will simply refresh.
+
+We can do that using the `event.preventDefault` method:
+
+```js
+function validateForm(event) {
+    event.preventDefault();
+    console.log("The form was submitted");
+}
+```
+
+Now when we click submit button the form is not submitted, the page doesn't reload and the message in the console remains there.
+
+Now can write the validation code.
+
+When the submit button is clicked, we want to check if both `firstName` and `email` have a value. If not, we want to display the error message below the relevant input.
+
+The code to check whether an input has a value will apply to any input that needs this validation, so let's write a function we can resuse:
+
+```js
+function checkInputLength(value) {
+    // trim the value
+    const trimmedValue = value.trim();
+
+    // if the value's length is greater than 0 return true
+    if (trimmedValue.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+The function will return `true` if the value passed in has a length greater than 0, otherwise it will return `false`.
+
+Inside the `validateForm` function we'll first select the `firstName` input and the `firstNameError` div and then pass the input's value to the `checkInputLength` function. If the input has value the error message will be hidden, otherwise it will be displayed:
+
+```js
+const firstName = document.querySelector("#firstName");
+const firstNameError = document.querySelector("#firstNameError");
+const firstNameValue = firstName.value;
+
+if (checkInputLength(firstNameValue) === true) {
+    firstNameError.style.display = "none";
+} else {
+    firstNameError.style.display = "block";
+}
+```
+
+The code in `js/contact.js` so far:
+
+```js
+const form = document.querySelector("#contactForm");
+
+form.addEventListener("submit", validateForm);
+
+function validateForm(event) {
+    event.preventDefault();
+    console.log("The form was submitted");
+
+    const firstName = document.querySelector("#firstName");
+    const firstNameError = document.querySelector("#firstNameError");
+    const firstNameValue = firstName.value;
+
+    if (checkInputLength(firstNameValue) === true) {
+        firstNameError.style.display = "none";
+    } else {
+        firstNameError.style.display = "block";
+    }
+}
+
+function checkInputLength(value) {
+    // trim the value
+    const trimmedValue = value.trim();
+
+    // if the value's length is greater than 0 return true
+    if (trimmedValue.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+Test the form and you'll see that validation for the `firstName` field is working.
+
+Because we are setting the error message's display property every time the submit button is clicked, if validation for the input failed and the error message was displayed, the message will be hidden again whenever validation passes.
+
+Let's add the same validation to the `email` input. We can remove the `=== true` in the if statement.
+
+```js
+const email = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+const emailValue = email.value;
+
+if (checkInputLength(emailValue)) {
+    emailError.style.display = "none";
+} else {
+    emailError.style.display = "block";
+}
+```
+
+---
+
+Branch [step-19](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-19) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
+
+---
+
+Now the validation code will check if both the `firstName` and `email` fields contain a value, but the code is not validating where the email address is valid.
+
+Let's create another function to validate the email.
+
+We said in Lesson 3 of Module 3 that `regular expressions` - or `regex` - are used to match patterns. We will use a regular expression in the `validateEmail` function to check if the value of the input matches a certain pattern.
+
+First we create the expression between two forward slashes `/` `/`.
+
+Then the `test` method checks if a value matches a pattern - it returns true or false. We'll return this value.
+
+```js
+function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+}
+```
+
+We could return the `test` method value directly:
+
+```js
+function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    return regEx.test(email);
+}
+```
+
+Let's add a check using the `validateEmail` below the other code that checks if the email input has a value.
+
+First we need to select a different div to display this particular error:
+
+```js
+const invalidEmailError = document.querySelector("#invalidEmailError");
+```
+
+Now we can add the `if` statement that will hide or show the error depending on if it passes the `regex` test in the `validateEmail` function:
+
+```js
+if (validateEmail(emailValue) === true) {
+    invalidEmailError.style.display = "none";
+} else {
+    invalidEmailError.style.display = "block";
+}
+```
+
+This is now the email validation code:
+
+```js
+const email = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+const invalidEmailError = document.querySelector("#invalidEmailError");
+
+const emailValue = email.value;
+
+if (checkInputLength(emailValue) === true) {
+    emailError.style.display = "none";
+} else {
+    emailError.style.display = "block";
+}
+
+if (validateEmail(emailValue) === true) {
+    invalidEmailError.style.display = "none";
+} else {
+    invalidEmailError.style.display = "block";
+}
+```
+
 ---
