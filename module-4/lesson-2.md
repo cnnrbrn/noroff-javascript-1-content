@@ -1,8 +1,8 @@
 # Lesson 2 - Display an array of results after an API call
 
-This is a short lesson on fetching an array of results from the elephant API and creating HTML from the returned data.
+This is a short lesson on fetching an array of results from an API and creating HTML from the returned data.
 
-In this lesson we will create the page below, a loop through an array of elephant results.
+In this lesson we will create the page below, a loop through an array of results from calling an elephant API.
 
 The example page can be found <a href="https://js-api-calls-step-1.netlify.com/" target="_blank">here</a>.
 
@@ -44,7 +44,7 @@ async function fetchElephants() {
 fetchElephants();
 ```
 
-Once the API call is complete, we are calling the `displayElephants` function and passing in the result of the call, which we are storing in the variable called `elephants`.
+Once the API call is complete, we call the `displayElephants` function and passing in the result of the call, which we are storing in the variable called `elephants`.
 
 We need to create the `displayElephants` function.
 
@@ -58,7 +58,7 @@ function displayElephants(elephants) {
 
 > You always need to inspect the data from an API call to see what you need to retrieve from it. All REST APIs will return JSON, but they will return it differently with different properties.
 
-These are the properties each elephant object has and that we can use when creating HTML.
+These are the properties each elephant object has that we can use when creating HTML.
 
 <img src="/images/js1/elephant-api-properties.png" alt="Elephant API properties" style="max-width:800px">
 
@@ -77,9 +77,9 @@ function displayElephants(elephants) {
     for (let i = 0; i < elephants.length; i++) {
         //some of the result objects have only id properties, nothing else
         // check if the object has a name property,
-        // if it doesn't, skip the result of the code in this iteration of the loop and go to the next object
+        // if it doesn't, skip the rest of the code in this iteration of the loop and go to the next object
         if (!elephants[i].name) {
-            // continue will skip the remaining code
+            // continue will skip the remaining code and return to the top of the loop
             continue;
         }
 
@@ -115,7 +115,7 @@ function displayElephants(elephants) {
 
 ### Default values for properties
 
-The `dod` property on each elephant object is the elephant's date of birth. Sometimes it only has a value of "-". We want to display something better than that for the user.
+The `dod` property on each elephant object is the elephant's date of death. Sometimes it only has a value of "-". We want to display something better than that for the user.
 
 In the code above we declare a variable called `dateOfDeath` and give it an initial value of "Unkown".
 
@@ -143,7 +143,7 @@ We can use the `continue` keyword to skip executing the code that follows it ins
 
 Several of the objects in the array of results don't have properties apart from an id. We don't want to create HTML for those objects.
 
-In the code above we check if the object has a `name` property and if it doesn't well skip the rest of the code in the block.
+In the code above we check if the object has a `name` property and if it doesn't we'll skip the rest of the code in the block.
 
 ```js
 if (!elephants[i].name) {
@@ -162,7 +162,7 @@ In the HTML we create in the loop, we are adding the `name` property as a parama
 <a href="detail.html?name=${elephants[i].name}">Details</a>
 ```
 
-In the next lesson we will retrive the name property from the url and use it in an API call to fetch a single elephant's details.
+In the next lesson we will retrive the name parameter from the url and use it in an API call to fetch a single elephant's details.
 
 ---
 
