@@ -156,7 +156,7 @@ We'll display the name property in the h2 tag:
 heading.innerHTML = details.name;
 ```
 
-We select two elements with the `specieS` and `note` classes by their class and add the `species` and `note` properties as their innerHTML values:
+We select two elements with the `species` and `note` classes by their class and add the `species` and `note` properties as their innerHTML values:
 
 ```js
 const species = document.querySelector(".species");
