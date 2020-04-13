@@ -4,9 +4,11 @@ This is a short lesson on fetching an array of results from an API and creating 
 
 In this lesson we will create the page below, a loop through an array of results from calling an elephant API.
 
-The example page can be found <a href="https://js-api-calls-step-1.netlify.com/" target="_blank">here</a>.
+The example page can be found <a href="https://api-calls.netlify.com/" target="_blank">here</a>.
 
-<iframe src="https://js-api-calls-step-1.netlify.com/" style="height:400px"></iframe>
+<iframe src="https://api-calls.netlify.com/" style="height:400px"></iframe>
+
+In the next lesson we will write the details page.
 
 Clone the [repo](https://github.com/javascript-repositories/javascript-1-api-calls) to follow along.
 
@@ -162,7 +164,7 @@ In the HTML we create in the loop, we are adding the `name` property as a parama
 <a href="detail.html?name=${elephants[i].name}">Details</a>
 ```
 
-In the next lesson we will retrive the name parameter from the url and use it in an API call to fetch a single elephant's details.
+In the next lesson we will retrieve the name parameter from the url and use it in an API call to fetch a single elephant's details.
 
 ---
 
