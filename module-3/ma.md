@@ -1,4 +1,3 @@
-
 # Module Assignment 3
 
 ## Level 1
@@ -27,7 +26,6 @@ In the `catch` method of your code, redirect to `error.html` if there is an erro
 https://api.rawg.io/api/games?genres=sports
 ```
 
-
 <h5 class="question">Question 3</h5>
 <small>Refer: lesson 3</small>
 
@@ -38,11 +36,11 @@ These cats are outrageous.
 ```
 
 <h5 class="question">Question 4</h5>
-<small>Refer: lesson 4</small>
+<small>Refer: lesson 3</small>
 
 Given the URL below, write code that checks if there is a `userId` parameter in the query string.
 
-If there is no `userID` parameter, redirect the browser to `third.html`. 
+If there is no `userID` parameter, redirect the browser to `third.html`.
 
 If there is a `userID` parameter and its value is less than 10, redirect to `first.html`.
 
@@ -51,7 +49,6 @@ If there is a `userID` parameter and its value is 10 or greater, redirect to `se
 ```js
 https://my.site.com?userId=7
 ```
-
 
 <h5 class="question">Question 5</h5>
 <small>Refer: lesson 4</small>
@@ -96,18 +93,15 @@ https://api.rawg.io/api/games/3801
 <div class="rating"></div>
 ```
 
-
 ---
 
 ## Submission
 
-- Create a repository in your GitHub account called `js1-ma3` and __make sure it's public__
-- Create a file called `{your-name}-js1-ma3.js`, e.g. `mary-smith-js1-ma3.js`. This is the only file you need to submit.
-- Write your answers inside this file with a comment above each answer indicating the question number:
-
+-   Create a repository in your GitHub account called `js1-ma3` and **make sure it's public**
+-   Create a file called `{your-name}-js1-ma3.js`, e.g. `mary-smith-js1-ma3.js`. This is the only file you need to submit.
+-   Write your answers inside this file with a comment above each answer indicating the question number:
 
 ```js
-
 // question 1
 
 // your answer for question 1 goes here
@@ -117,9 +111,7 @@ https://api.rawg.io/api/games/3801
 // your answer for question 2 goes here
 
 // etc
-
 ```
 
-- Add, commit and push this file to your repo
-- Submit the repo link
-
+-   Add, commit and push this file to your repo
+-   Submit the repo link
