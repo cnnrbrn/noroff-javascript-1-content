@@ -176,18 +176,11 @@ Now values with only spaces won't pass the length test.
 
 ---
 
-Check out [step-18](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-18) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to continue the lesson.
+Clone the [repo](https://github.com/javascript-repositories/form-validation) to add the code below.
 
 ---
 
-A link to a contact page has been added in the nav, and in `contact.html` we've added a form with two inputs:
-
--   firstName
--   email
-
-A link to `js/contact.js` has been added at the bottom of `contact.html`.
-
-In `js/contact.js` let's write code to validate the form when the form is submitted.
+We'll add the code in `js/contact.js`.
 
 First we'll select the form:
 
@@ -209,7 +202,7 @@ function validateForm(event) {
 }
 ```
 
-If you add code above and then click the submit button, the console message will briefly appear but because when a form is submitted the page gets reloaded, the message will disapear as the page refreshes.
+If you add code above and then click the submit button, the console message will briefly appear but because, by default, when a form is submitted the page gets reloaded, the message will disapear as the page refreshes.
 
 After the form is submitted you'll see parameters have been added to the query string:
 
@@ -217,7 +210,7 @@ After the form is submitted you'll see parameters have been added to the query s
 http://127.0.0.1:5502/contact.html?firstName=&email=
 ```
 
-This is how forms submit their input values when they don't have a `method` attribute set - they use the default method which is the `GET` method. Using this method all the input names and values get added to the query string.
+This is how forms submit their input values when they don't have a `method` attribute set - they use the default method which is the `GET` method. Using this method all the input names and values get added to the querystring.
 
 If we add a `method` attribute to the form and give it a value of `POST`, the values won't be added to the query string and forms are usually submitted using the `POST` method.
 
@@ -234,11 +227,11 @@ function validateForm(event) {
 
 Now when we click submit button the form is not submitted, the page doesn't reload and the message in the console remains there.
 
-Now can write the validation code.
+Now we can write the validation code.
 
 When the submit button is clicked, we want to check if both `firstName` and `email` have a value. If not, we want to display the error message below the relevant input.
 
-The code to check whether an input has a value will apply to any input that needs this validation, so let's write a function we can resuse:
+The code to check whether an input has a value will apply to any input that needs this validation, so let's write a function we can reuse:
 
 ```js
 function checkInputLength(value) {
@@ -323,12 +316,6 @@ if (checkInputLength(emailValue)) {
 }
 ```
 
----
-
-Branch [step-19](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-19) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
-
----
-
 Now the validation code will check if both the `firstName` and `email` fields contain a value, but the code is not validating where the email address is valid.
 
 Let's create another function to validate the email.
@@ -397,3 +384,5 @@ if (validateEmail(emailValue) === true) {
 ```
 
 ---
+
+The code added in this lesson can be found in the <a href="https://github.com/javascript-repositories/form-validation/blob/step-1/js/contact.js" target="_blank">step-1</a> branch of the repo.

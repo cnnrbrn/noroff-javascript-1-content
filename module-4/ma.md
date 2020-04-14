@@ -3,7 +3,7 @@
 ## Level 1
 
 <h5 class="question">Question 1</h5>
-<small>Refer: <a href="https://interactive-content.now.sh/javascript-1/4/1#validating-forms">lesson 1</a></small>
+<small>Refer: <a href="https://interactive-content.now.sh/javascript-1/4/4">lesson 4</a></small>
 
 Add the following HTML and CSS to a page called `question1.html`.
 
