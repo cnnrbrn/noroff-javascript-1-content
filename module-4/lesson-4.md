@@ -386,3 +386,9 @@ if (validateEmail(emailValue) === true) {
 ---
 
 The code added in this lesson can be found in the <a href="https://github.com/javascript-repositories/form-validation/blob/step-1/js/contact.js" target="_blank">step-1</a> branch of the repo.
+
+---
+
+[Go to the module assignment](ma)
+
+---

@@ -170,8 +170,8 @@ In the next lesson we will retrieve the name parameter from the url and use it i
 
 The code added in this lesson can be foudn in the <a href="https://github.com/javascript-repositories/javascript-1-api-calls/blob/step-1/js/index.js" target="_blank">step-1</a> branch of the repo.
 
-<!-- ---
+---
 
 [Go to lesson 3](3)
 
---- -->
+---

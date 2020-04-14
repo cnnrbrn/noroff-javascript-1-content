@@ -241,8 +241,8 @@ The RAWG API does not require this workaround as it has been configured to accep
 -   <a href="https://apilist.fun/" target="_blank">https://apilist.fun/</a>
 -   <a href="https://rapidapi.com/collection/list-of-free-apis" target="_blank">https://rapidapi.com/collection/list-of-free-apis</a>.
 
-<!-- ---
+---
 
--   [Go to lesson 2](2)
+[Go to lesson 2](2)
 
---- -->
+---

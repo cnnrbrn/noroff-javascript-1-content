@@ -187,3 +187,7 @@ The `finally` block runs after all the other code has completed, whether there w
 The code added in this lesson can be found in the <a href="https://github.com/javascript-repositories/javascript-1-api-calls/blob/step-2/js/detail.js" target="_blank">step-2</a> branch of the repo.
 
 ---
+
+[Go to lesson 4](4)
+
+---
