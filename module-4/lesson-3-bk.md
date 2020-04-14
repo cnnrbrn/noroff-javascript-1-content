@@ -9,7 +9,7 @@ Check out the [step-24](https://github.com/javascript-repositories/javascript-1-
 The link on the cards we created in `js/creators.js` link to `creator-details.html` with an `id` parameter in the query string.
 
 ```js
-href="creator-detail.html?id=25"
+href = "creator-detail.html?id=25";
 ```
 
 We've added `creator-detail.html` and inside is HTML with some placeholder values:
@@ -61,13 +61,13 @@ Now we'll use that URL in a fetch call and pass the JSON that's returned to a fu
 
 ```js
 fetch(detailUrl)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
         createCreator(json);
     })
-    .catch(function() {
+    .catch(function () {
         document.location.href = "error.html";
     });
 ```
@@ -78,7 +78,6 @@ The first thing to do is always to log the JSON returned from the call:
 function createCreator(json) {
     console.dir(json);
 }
-
 ```
 
 The JSON returned from this call is a single object - all the properties we need are directly on the object, we can access `name`, for example using `json.name`.
@@ -130,13 +129,13 @@ const creatorsUrl = `https://api.rawg.io/api/creators/`;
 const detailUrl = `${creatorsUrl}${id}`;
 
 fetch(detailUrl)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
         createCreator(json);
     })
-    .catch(function() {
+    .catch(function () {
         document.location.href = "error.html";
     });
 
@@ -156,7 +155,6 @@ function createCreator(json) {
     const description = document.querySelector(".creator-description");
     description.innerHTML = json.description;
 }
-
 ```
 
 Branch [step-25](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-25) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
@@ -165,7 +163,7 @@ Branch [step-25](https://github.com/javascript-repositories/javascript-1-lesson-
 
 ## Code improvement practice
 
-### Part 1 
+### Part 1
 
 If the result returned from the API call doesn't have an `image` property, use the `image_background` property as the image `src` instead.
 
@@ -186,5 +184,7 @@ There is a `hidden` class in the CSS you can use to hide elements.
 You can find example code for this in [step-27](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-27). Look in `creator-detail.html` and `js/creator-details.js`.
 
 ---
-- [Go to lesson 4](4) 
+
+-   [Go to lesson 4](4)
+
 ---

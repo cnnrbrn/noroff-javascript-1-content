@@ -2,9 +2,15 @@
 
 In this lesson we are going to add simple validation to a form.
 
+The example page can be found <a href="https://js1-form-validation.netlify.com/" target="_blank">here</a>.
+
+<iframe src="https://js1-form-validation.netlify.com/" style="height:400px"></iframe>
+
 ---
 
-We looked at the `replace()` method in [Lesson 3 of Module 3](../3/3)
+First we will look at two string manipulation methods.
+
+We looked at the `replace()` method in [Lesson 3 of Module 3](../3/3).
 
 We are going to look at two other methods here:
 

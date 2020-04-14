@@ -18,12 +18,11 @@ You can use the `.js` files provided.
 
 You will use the [Rick and Morty API](https://rickandmortyapi.com/documentation/#rest) for the API calls in the assignment.
 
-The base URL for the calls will be 
+The base URL for the calls will be
 
 ```js
 https://rickandmortyapi.com/api/character/
 ```
-
 
 ## Level 1
 
@@ -32,13 +31,13 @@ https://rickandmortyapi.com/api/character/
 Make a call to the base URL, loop through the results and create the following HTML for each result (this HTML is in index.html in the repo too):
 
 ```html
-<div class="col-sm-6 col-md-4 col-lg-3">                
-    <div class="card">    
-        <img class="image" src="https://via.placeholder.com/300" alt="Character Name">
+<div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="card">
+        <img class="image" src="https://via.placeholder.com/300" alt="Character Name" />
         <div class="details">
             <h4 class="name">Character Name</h4>
-            <p>Type: Type value here</p>    
-            <p>Episode count: Episode count here</p>                                  
+            <p>Type: Type value here</p>
+            <p>Episode count: Episode count here</p>
             <a class="btn btn-primary" href="details.html?id=">Details</a>
         </div>
     </div>
@@ -49,10 +48,10 @@ Replace each placeholder value with an appropriate value from the results.
 
 If the `type` property is empty or doesn't exist display the string `Unknown` instead.
 
-Add an `id` value to the id paramater in the link's href value. 
+Add an `id` value to the id paramater in the link's href value.
 
 ```js
-href="details.html?id=1234"
+href = "details.html?id=1234";
 ```
 
 (`1234` in the above example will be replaced by the id of the result)
@@ -93,7 +92,7 @@ From the data object that is returned, replace all the placeholder values in the
         <p>Status: <span class="value" id="status">Status goes here</span></p>
         <p>Species: <span class="value" id="species">Species goes here</span></p>
         <p>Origin: <span class="value" id="origin">Origin name goes here</span></p>
-        <p>Location: <span class="value" id="location">Location name goes here</span></p>                   
+        <p>Location: <span class="value" id="location">Location name goes here</span></p>
     </div>
 </div>
 ```
@@ -116,10 +115,10 @@ Do this for the heading and the rest of the text.
 
 When the form on this page is submitted, write code to validate the inputs"
 
-- `First name` - must have a value
-- `Last name` - must have a value
-- `Email` - must have a value and be formatted like an email address
-- `Message` - must have a value that is at least 10 characters long
+-   `First name` - must have a value
+-   `Last name` - must have a value
+-   `Email` - must have a value and be formatted like an email address
+-   `Message` - must have a value that is at least 10 characters long
 
 If any of the inputs fail validation display the relevant error message.
 
@@ -141,9 +140,9 @@ If all validation passes, add a message above the form indicating the form passe
 
 ## Submission
 
-- Create a repository in your GitHub account called `your-name-js1-ca`, e.g. `mary-smith-js1-ca`, and __make sure it's public__
-- If you downloaded the repository you can simply commit and push your code to your repository
-- If you cloned the repository you can change the origin url so that pushes will be sent to your repo:
+-   Create a repository in your GitHub account called `your-name-js1-ca`, e.g. `mary-smith-js1-ca`, and **make sure it's public**
+-   If you downloaded the repository you can simply commit and push your code to your repository
+-   If you cloned the repository you can change the origin url so that pushes will be sent to your repo:
 
 ```js
 git remote set-url origin NEW_URL
@@ -151,5 +150,4 @@ git remote set-url origin NEW_URL
 
 where `NEW_URL` is your repo's URL.
 
-- Submit the repo link
-
+-   Submit the repo link
