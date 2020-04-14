@@ -1,5 +1,9 @@
 # Lesson 4 - String manipulation and form validation
 
+In this lesson we are going to add simple validation to a form.
+
+---
+
 We looked at the `replace()` method in [Lesson 3 of Module 3](../3/3)
 
 We are going to look at two other methods here:
@@ -43,6 +47,8 @@ A common use for the `length` property is to check the length of the value a use
 Sometimes an input needs to have a minimum or maximum number of characters, or sometimes the input is simply required - it must have at least one character.
 
 Let's select the `firstName` input below and log it's value using a `keyup` event.
+
+Add the following input to an HTML page:
 
 ```html
 <input type="text" id="firstName" />
