@@ -239,7 +239,8 @@ The RAWG API does not require this workaround as it has been configured to accep
 ### Free API lists
 
 -   <a href="https://apilist.fun/" target="_blank">https://apilist.fun/</a>
--   <a href="https://rapidapi.com/collection/list-of-free-apis" target="_blank">https://rapidapi.com/collection/list-of-free-apis</a>.
+-   <a href="https://rapidapi.com/collection/list-of-free-apis" target="_blank">https://rapidapi.com/collection/list-of-free-apis</a>
+-   <a href="https://github.com/public-apis/public-apis" target="_blank">https://github.com/public-apis/public-apis</a>
 
 ---
 
