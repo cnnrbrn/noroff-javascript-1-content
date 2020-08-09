@@ -1,5 +1,7 @@
 # Module Assignment 1
 
+The HTML and JS file for this assignment can be found in <a href="https://github.com/NoroffFEU/ma-javascript1-module1" target="_blank">this repo</a>.
+
 ## Level 1
 
 <h5 class="question">Question 1</h5>
@@ -10,11 +12,9 @@ Give the object one property called `complain`. `complain`'s value should be a m
 
 <h5 class="question">Question 2</h5>
 
-Select the `h3` from the HTML below using the `querySelector` method and assign it to a variable called `heading`.
+Select the `h3` from the HTML using the `querySelector` method and assign it to a variable called `heading`.
 
-```html
-<h3>Subheading</h3>
-```
+Change its `innerHTML` value to "Updated heading". 
 
 <h5 class="question">Question 3</h5>
 
@@ -28,60 +28,36 @@ Add a class to the `heading` variable called `subheading`.
 
 Write code that selects all the `p` elements on a page and assigns them to a variable called `paragraphs`.
 
+Loop through the `p` elements and change the colour of each to "red". 
+
 <h5 class="question">Question 6</h5>
 
-Select the `div` by its class from the HTML below, assign it to a variable called `resultsContainer` and set its inner HTML to be `<p>New paragraph</p>`.
-
-```html
-<div class="results"></div>
-```
+Select the `div` with a class of `results`, assign it to a variable called `resultsContainer` and set its inner HTML to be `<p>New paragraph</p>` and its background colour to be `yellow`.
 
 <h5 class="question">Question 7</h5>
 
-Create a function that has one argument called `catArray`.
+Create a function that has one parameter called `list`.
 
-Inside the function, loop through the `catArray` argument and console log the `name` property in each object.
+Inside the function, loop through the `list` parameter and console log the `name` property in each object.
 
-Call the function and pass in the `cats` variable below.
+Call the function and pass in the `cats` variable in the `script.js` file in the repo.
 
-```js
-const cats = [
-    {
-        name: "Blob",
-        age: 10
-    },
-    {
-        name: "Harold",
-    },
-    {
-        name: "Blurt",
-        age: 21
-    }
-];
-```
 
 <h5 class="question">Question 8</h5>
 
-Using the function and `cats` variable from the above question, instead of logging the `name` property, wrap each `name` property in an `h5` tag, add it to a variable you declare before the loop and return the variable from the function after the loop.
+Create a function called `createCats`. The function will have one parameter called `cats`.
 
-The function should return the following:
+Inside the function loop through the value passed in as `cats` and create HTML for each object in the array.
 
-```html
-<h5>Blob</h5>
-<h5>Harold</h5>
-<h5>Blurt</h5>
-```
+Wrap each item in a div, each `name` property in an `h5` tag and each `age` property in a `p` tag.
 
-<h5 class="question">Question 9</h5>
+If the `age` property is missing, it should display `Age unknown` instead. 
 
-Call the function from question 8, pass it the `cats` variable from question 7 and 
-set the inner HTML of the `resultsContainer` variable from question 6 to the return value of the function.
+Return the HTML from the function.
 
-<h5 class="question">Question 10</h5>
+Call the function and pass in the `cats` array as the argument.
 
-Using the function from question 8, add a `p` element containing the `age` property from each object. If the `age` property is missing, it should display `Age unknown` instead. 
-
-Wrap the `h5` and `p` in a `div`.
+Assign the return value of the function to the `innerHTML` property of the element on the HTML page with a class of `cat-container`.
 
 The function should return the following:
 
@@ -110,8 +86,8 @@ It doesn't have to be formatted like that, yours will look more like a single st
 ## Submission
 
 - Create a repository in your GitHub account called `your-name-js1-ma1`, e.g. mary-smith-js1-ma1, and __make sure it's public__
-- Create a file called `script.js`. This is the only file you need to submit.
-- Write your answers inside this file with a comment above each answer indicating the question number:
+- All your answers can go in `script.js`.
+- Place a comment above each answer indicating the question number:
 
 
 ```js
