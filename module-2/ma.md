@@ -28,9 +28,9 @@ Write code that adds the class `highlight` to the body when the page has scrolle
 
 ## Submission
 
--   Create a repository in your GitHub account called `js1-ma2` and **make sure it's public**
--   Create a file called `{your-name}-js1-ma2.js`, e.g. `mary-smith-js1-ma2.js`. This is the only file you need to submit.
--   Write your answers inside this file with a comment above each answer indicating the question number:
+-   Create a repository in your GitHub account called `your-name-js1-ma2`, e.g. mary-smith-js1-ma2, and **make sure it's public**
+-   All your answers can go in `script.js`.
+-   Place a comment above each answer indicating the question number:
 
 ```js
 // question 1
