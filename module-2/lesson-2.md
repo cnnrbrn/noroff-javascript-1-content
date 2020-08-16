@@ -61,11 +61,11 @@ In the next a video a `setTimeout` function is used to mimic a loading state whe
 
 <a href="https://github.com/NoroffFEU/dom-events-onchange-event/tree/extra" target="_blank">Code from the video</a>
 
-<!-- ## Lesson Task
+## Lesson Task
 
 There are practice questions in the master branch of [this repo](https://github.com/NoroffFEU/lesson-task-js1-module2-lesson2).
 
-Attempt the answers before checking them against the answers in the `script.js` file in the [answers branch](https://github.com/NoroffFEU/lesson-task-js1-module2-lesson2/tree/answers) of the repo. -->
+Attempt the answers before checking them against the answers in the `script.js` file in the [answers branch](https://github.com/NoroffFEU/lesson-task-js1-module2-lesson2/tree/answers) of the repo.
 
 ---
 
