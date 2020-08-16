@@ -10,7 +10,7 @@ Add a click event to the first `button` in the HTML file that changes the body b
 
 <h5 class="question">Question 2</h5>
 
-Add a click event to the second `button` that toggles the class `extra` on the div with the class of `togglee`.
+Add a click event to the second `button` that toggles the class `extra` (adds it on the first click, removes it on the next) on the div with the class of `togglee`.
 
 <h5 class="question">Question 3</h5>
 
