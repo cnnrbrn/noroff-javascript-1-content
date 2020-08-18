@@ -33,6 +33,12 @@ The following explores the `onkeyup` event by building a character counter for a
 
 <a href="https://github.com/NoroffFEU/dom-events-onkeyup" target="_blank">Code from the video</a>
 
+## Lesson Task
+
+There are practice questions in the master branch of [this repo](https://github.com/NoroffFEU/lesson-task-js1-module2-lesson3).
+
+Attempt the answers before checking them against the answers in the `script.js` file in the [answers branch](https://github.com/NoroffFEU/lesson-task-js1-module2-lesson3/tree/answers) of the repo.
+
 ---
 
 [Go to lesson 4](4)
