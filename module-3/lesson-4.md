@@ -1,418 +1,165 @@
-# Lesson 4 - Fetching a specific item from an API
+# Lesson 4 
 
-Check out [step-16](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-16) branch from the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) to follow this lesson.
+In this lesson we will take a look at:
+
+- fixing CORS errors
+- how to find free APIs to use
+- adding header values to API calls
+
+## CORS
+
+CORS stands for `C`ross-`O`rigin `R`esource `S`haring.
+
+APIs that are not configured to accept requests from different origins, or domains, to their own will block the requests.
+
+A lot of websites make calls to different APIs living on different servers, so we need a way around this.
+
+There are two ways to solve this issue:
+
+1. the API can be configured to allow cross-origin requests
+2. we can send the API calls through a proxy service
+
+Because we don't have control over how the API is configured unless we develop the API, option 2 is our only solution.
+
+The API found at [https://noroffcors.herokuapp.com/](https://noroffcors.herokuapp.com/) is a service we can use to enable cross-origin requests.
+
+To use it we simply have to prepend that URL to the URL of the API we want to use.
+
+The following API endpoint returns a list of elephants:
+
+```js
+https://elephant-api.herokuapp.com/elephants
+```
+
+If you called that URL with `fetch` like this
+
+```js
+const elephantUrl = "https://elephant-api.herokuapp.com/elephants";
+
+const response = await fetch(elephantUrl);
+const results = await response.json();
+```
+
+an error similar to this would be returned:
+
+```
+Access to fetch at 'https://elephant-api.herokuapp.com/elephants' from origin 'http://127.0.0.1:5501' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+```
+
+To get around this, we can add the `cors-anywhere` URL to the beginning of the URL:
+
+```js
+const elephantUrl = "https://elephant-api.herokuapp.com/elephants";
+const corsEnabledUrl = "https://noroffcors.herokuapp.com/" + elephantUrl;
+
+const response = await fetch(corsEnabledUrl);
+const results = await response.json();
+```
+
+Now the API call will work.
+
+<iframe src="https://player.vimeo.com/video/450829010" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<a href="https://github.com/NoroffFEU/get-request-with-cors-fix" target="_blank">Code from the video</a>
+
+
 
 ---
 
-The following changes have been made to the projects files in this branch:
 
-- The `makeGenres` and `makePlatforms` functions have been moved from `js/script.js` to a new file called `js/tags.js`.
-- `js/details.js` has been added
-- `details.html` has been added and loads `js/details.js` and `js/tags.js`
+## Finding free APIs to use
 
-```html
-<script src="js/details.js"></script>
-<script src="js/tags.js"></script>
-```
+The are many free APIs available to write frontend code against and a Google search for "free APIs" will return several lists of APIs you can use.
 
----
+One such list can be found at <a href="https://rapidapi.com/collection/list-of-free-apis" target="_blank">https://rapidapi.com/collection/list-of-free-apis</a>.
 
-## Fetching details of a particular game
+Log in with your Github account or create a new account. You can skip/close the screen that asks you for your name and organisation.
 
-In `js/script.js` a `Details` link styled like a button has been added to each card:
+Many of the APIs, although free, still require keys to use. Logging in to the service will give you access to automatically created keys.
 
-```js
-<a class="btn details">Details</a>
-```
+<img src="/images/js1/rapid-api.png" alt="Rapid API" style="max-width:900px">
 
-At the moment the link doesn't do anything. We want to use it to link to a details page with the game's `id` in the query string.
+We are going to scroll down and select `Urban Dictionary` from this free list, but you can browse by category or collection. Some require subscription but offer free limited subscriptions.
 
-On the details page, we'll retrieve the id and use it in a call to the API to fetch the game's details.
+On the Urban Dictionary page you can test the API endpoint. An API key has been created to use in the call.
 
-First, let's add the `href` attribute including the id to the link:
+<img src="/images/js1/rapid-api-urban-dictionary.png" alt="Rapid API - Urban Dictionary" style="max-width:900px">
 
-```js
-<a class="btn details" href="details.html?id=${games[i].id}">Details</a>
-```
+From the dropdown menu select `JavaScript` -> `fetch`:
 
-Now the links will take us to the details page with the game id in the query string.
+<img src="/images/js1/rapid-api-dropdown.png" alt="Rapid API code select" style="max-width:700px">
 
-```js
-http://127.0.0.1:5502/details.html?id=5679
-```
+Click the Test Endpoint button to test the API. The results will be returned in the right panel in the Response Body section.
 
-On `details.html`, there is a `Back to games` link and the loader.
+<img src="/images/js1/rapid-api-response.png" alt="Rapid API response body" style="max-width:700px">
 
-We'll code the following in `js/details.js`.
+The Code Snippet tab in the right panel has example code for the call that uses `fetch`.
 
-First we'll get the query string and the params from it:
+<img src="/images/js1/rapid-api-example-fetch.png" alt="Rapid API example fetch" style="max-width:700px">
+
+You can copy that code and use it in your script file or test it in the browser console. Note that the example code doesn't include the second `then` method which you will need to add.
+
+We can take that code and rewrite it using `async/await`.
+
+The extra object added to the fetch call contains the header property with the required API key values.
 
 ```js
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-```
-
-We'll declare a variable to hold the `id` if it exists
-
-```js
-let id;
-```
-
-We want to check if the `id` param exist and if it does, assign it to the `id` variable:
-
-```js
-if (params.has("id")) {
-    id = params.get("id");
-}
-```
-
-If the `id` param doesn't exist, there is no point running the rest of the code in the file, let's go back to the home page. We can redirect to the home page using 
-
-```js
-document.location.href = "/";
-```
-
-Full code so far:
-
-```js
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-
-let id;
-
-if (params.has("id")) {
-    id = params.get("id");
-} else {
-    document.location.href = "/";
-}
-```
-
-We're not loading the `js/script.js` file so we'll need to create the `baseUrl` and `gamesUrl` variables here:
-
-```js
-const baseUrl = "https://api.rawg.io/api/";
-const gamesUrl = `${baseUrl}games/`;
-```
-
-The format of the URL to fetch a specific game is 
-
-`
-https://api.rawg.io/api/games/id
-`
-
-so we'll create `detailsUrl` variable that includes the id:
-
-```js
-const baseUrl = "https://api.rawg.io/api/";
-const gamesUrl = `${baseUrl}games/`;
-const detailsUrl = `${gamesUrl}${id}`;
-```
-
-This is the URL we'll use in the `fetch`:
-
-```js
-fetch(detailsUrl)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(json) {
-        createDetails(json);
-    })
-    .catch(function(error) {
-        console.dir(error);
+async function callUrbanDictionary() {
+    const response = await fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=wat", {
+        headers: {
+            "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
+            "x-rapidapi-key": "your-key-here"
+        }
     });
-```
 
-
-Next we'll need the `createDetails` function that we're calling from the second `then` method. This time we'll call the argument `details`.
-
-```js
-function createDetails(details) {
-    console.dir(details);
+    const json = await response.json();
+    console.log(json);
 }
+
+callUrbanDictionary();
 ```
 
-If we log the `details` argument we'll see it's an object with a lot of properties about the retrieved game. 
+## API call headers
 
-<img src="/images/js1/game-details.png" alt="promise" style="max-width:400px">
+The second argument to a fetch call is an object we can use to set options, like header properties. We are setting two header properties, `x-rapidapi-host` and `x-rapidapi-key`.
 
-We'll use those properties to build the page elements.
+Header properties sent by API calls executed in the browser can be viewed in the Network tab in dev tools. Filter by XHR, click on a call URL and look in the Request Headers section:
 
-### removeChild
+<img src="/images/js1/request-headers.png" alt="Request headers" style="max-width:900px">
 
-We need to remove the loader from the page once the API call has finished.
-
-The container div contains the `Back to games` link as well as the loader. If we set its innerHTML property to an empty string
+We can move the options object to a variable to make the code more readable:
 
 ```js
-innerHTML = "";
-```
+const options = {
+    headers: {
+        "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
+        "x-rapidapi-key": "your-key-here"
+    }
+};
 
-the link would disapper too, not just the loader.
-
-We an use the `removeChild` method to remove only the loader from the DOM.
-
-First we'll select the container and the loader:
-
-```js
-const container = document.querySelector(".container");
-const loader = document.querySelector(".loader");
-```
-
-Now we'll call `removeChild` on `container` and pass in `loader` as the element to remove:
-
-```js
-container.removeChild(loader);
-```
-
-The loader will now be gone.
-
-Full function code so far:
-
-```js
-function createDetails(details) {
-    console.dir(details);
-
-    const container = document.querySelector(".container");
-    const loader = document.querySelector(".loader");
-    container.removeChild(loader);
+async function callUrbanDictionary() {
+    const response = await fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=wat", options);
+    const json = await response.json();
+    console.log(json);
 }
+
+callUrbanDictionary();
 ```
 
-### createElement
-
-So far we've created new HTML elements using a string and assigning it to an element's `innerHTML` property.
-
-There is another way to create elements using the `createElement` method.
-
-First let's create a new `h1` tag:
-
-```js
-const heading = document.createElement("h1");
-console.log(heading);
-// <h1></h1>
-```
-
-Let's add class to it using the `className` property rather than the `classList` object:
-
-```js
-heading.className = "details-title";
-```
-
-The `createTextNode` method allows us to create a new `text node`. The argument to the method will be text value that is created.
-
-```js
-const headingContent = document.createTextNode("Heading");
-```
-
-We can add this text node as child node the `h1` tag using the `appendChild` method:
-
-```js
-heading.appendChild(headingContent);
-console.log(heading);
-// <h1>Heading</h1>
-```
-
-To add this `h1` to the DOM and display it on the page, we can use the `appendChild` method again.
-
-We'll appened it to the `container` from above:
-
-```js
-container.appendChild(heading);
-```
-
-Now the `h1` is visible on the page, but we want to display the game's name in the heading, not a static string. We can use the `details.name` property for this:
-
-```js
-const headingContent = document.createTextNode(details.name);
-```
-
-Now the game's name is displayed in the `h1`.
-
-Using `createTextNode` and then appending it to the element is quite a verbose way to go about it.
-
-Now that you know that way exists, let's go back to using `innerText`/`innerHTML`:
-
-```js
-heading.innerText = details.name;
-```
-
-Full function code so far:
-
-```js
-function createDetails(details) {
-    const container = document.querySelector(".container");
-    const loader = document.querySelector(".loader");
-    container.removeChild(loader);
-
-    const heading = document.createElement("h1");
-    heading.innerText = details.name;
-
-    container.appendChild(heading);
-}
-```
-
-Let's add a div that will display the game's image as a background image.
-
-First we create the div:
-
-```js
-const backgroundImage = document.createElement("div");
-```
-
-Then add a class to it:
-
-```js
-backgroundImage.className = "details-image";
-```
-
-Then set its background-image property as `details.background_image`:
-
-```js
-backgroundImage.style.backgroundImage = `url("${details.background_image}")`;
-```
-
-And finally append it to the container. The appendChild method adds the element after the existing elements:
-
-```js
-container.appendChild(backgroundImage);
-```
-
-We'll follow a similar process for the game's description:
-
-```js
-const description = document.createElement("div");
-description.className = "details-description";
-// we'll innerHTML as description contains HTML
-description.innerHTML = details.description;
-
-container.appendChild(description);
-```
-
-Let's add the release date using a `time` tag
-
-```js
-const releaseDate = document.createElement("time");
-releaseDate.className = "details-date";
-releaseDate.innerText = `Released: ${details.released}`;
-
-container.appendChild(releaseDate);
-```
-
-That will place the `releaseDate` element at the bottom of the other elements.
-
-If we wanted to place it before another element, we can use the `before` method. Let's place it before the description:
-
-```js
-description.before(releaseDate);
-```
-
-> The `after` method will insert an element after another element.
-
-The complete `createDetails` function:
-
-```js
-function createDetails(details) {
-    const container = document.querySelector(".container");
-
-    // select the loader and then remove it from the DOM
-    const loader = document.querySelector(".loader");
-    container.removeChild(loader);
-
-    // create the heading
-    const heading = document.createElement("h1");
-    heading.innerText = details.name;
-
-    container.appendChild(heading);
-
-    // add the div with a background image
-    const backgroundImage = document.createElement("div");
-    backgroundImage.className = "details-image";
-    backgroundImage.style.backgroundImage = `url("${details.background_image}")`;
-
-    container.appendChild(backgroundImage);
-
-    // add the description
-    const description = document.createElement("div");
-    description.className = "details-description";
-    description.innerHTML = details.description;
-
-    container.appendChild(description);
-
-    // add the release date
-    const releaseDate = document.createElement("time");
-    releaseDate.className = "details-date";
-    releaseDate.innerText = `Released: ${details.released}`;
-
-    description.before(releaseDate);
-}
-```
----
-
-### Adding the genre links to the details page
-
-One of the things that makes functions so useful is that we can reuse their functionality. 
-
-Let's reuse the `makeGenres` function on this page to create the genre links.
-
-We've moved both the `makreGenres` and `makePlatforms` functions from `js/script.js` to `js/tags/js` and are loading it in `details.html`.
-
-This means me can use both functions on this page.
-
-First, let's create a div to hold the genres:
-
-```js
-const genres = document.createElement("div");
-genres.className = "details-genres";
-```
-
-Now we want to assign the return value of the `makeGenres` function to the innerHTML of the `genres` element and append it to the container.
-
-```js
-genres.innerHTML = makeGenres(details.genres);
-
-container.appendChild(genres);
-```
-
-No genres are being displayed and the console is displaying an error:
-
-```
-ReferenceError: genres is not defined
-```
-
-If we look inside the `makeGenres` function in `js/tags.js`, we have the `if` statement checking if the `genres` variable is equal to the `slug` of the `genre` being looped through:
-
-```js
-if (genres === genre.slug) {
-    activeClass = "active";
-}
-```
-
-Because `genres` is declared in `js/api.js` and we aren't loading that file on this page, the `genres` variable doesn't exist in this context and the error is thrown.
-
-We need to check if `genres` exists before using it in the comparison inside the if. We can do this using the `typeof` operator and checking it's not equal to the string value `"undefined"`:
-
-```js
-if (typeof genres !== "undefined" && genres === genre.slug) {
-    activeClass = "active";
-}
-```
-
-Now the `genre` links will be displayed after the description and we can use them to search for games in different genres.
-
-### Updating the page title
-
-We can update the page title using `document.title`.
-
-Let's set the title to the game's name, a pipe symbol `|` plus whatever is currently in the title. We'll add this at the bottom of the `createDetails` function.
-
-```js
-document.title = details.name + " | " + document.title;
-```
+The header properties you set, for APIs that require them, will vary between APIs. 
 
 ---
 
-Branch [step-17](https://github.com/javascript-repositories/javascript-1-lesson-code/tree/step-17) of the [repo](https://github.com/javascript-repositories/javascript-1-lesson-code) contains the code so far.
+### Free API lists
+
+-   <a href="https://apilist.fun/" target="_blank">https://apilist.fun/</a>
+-   <a href="https://rapidapi.com/collection/list-of-free-apis" target="_blank">https://rapidapi.com/collection/list-of-free-apis</a>
+-   <a href="https://github.com/public-apis/public-apis" target="_blank">https://github.com/public-apis/public-apis</a>
+
+
+---
+
+> For the CA you will be required to find your own API to use
 
 ---
 - [Go to the module assignment](ma) 
