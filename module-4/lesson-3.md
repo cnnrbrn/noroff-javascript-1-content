@@ -41,9 +41,4 @@ In this video we will add a variable to the href value in an `<a>` tag, retrieve
 
 <a href="https://github.com/NoroffFEU/passing-variables-to-other-pages-in-the-querystring" target="_blank">Code from the video</a>
 
-<!-- 
----
 
-[Go to lesson 4](4)
-
---- -->
