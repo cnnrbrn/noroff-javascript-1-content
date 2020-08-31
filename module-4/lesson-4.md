@@ -337,3 +337,7 @@ if (validateEmail(emailValue) === true) {
     invalidEmailError.style.display = "block";
 }
 ```
+
+---
+ [Go to the module assignment](ma) 
+---
