@@ -339,5 +339,7 @@ if (validateEmail(emailValue) === true) {
 ```
 
 ---
- [Go to the module assignment](ma) 
+
+[Go to the module assignment](ma) 
+
 ---
