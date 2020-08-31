@@ -2,8 +2,9 @@
 
 In this lesson we are going to look at:
 
-- regular expressions
-- simple form validation
+-   regular expressions
+-   preventing the default behaviour of forms
+-   simple form validation
 
 ## Regular Expressions
 
@@ -45,6 +46,22 @@ Here is a [list of common regular expressions](https://digitalfortress.tech/tric
 
 ---
 
+## Preventing the default behaviour of forms
+
+To prevent the default behaviour of submitted forms, which includes reloading the page, when can use:
+
+```js
+event.preventDefault();
+```
+
+<iframe src="https://player.vimeo.com/video/453361604" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<a href="https://vimeo.com/453361604/765aa36966" target="_blank">Direct link</a>
+
+<a href="https://github.com/NoroffFEU/submit-event-preventDefault" target="_blank">Code from the video</a>
+
+---
+
 ## Simple form validation
 
 We're going to use the `trim()` method and `length` property we have looked at [before](https://scrimba.com/c/cQRRVdTq) to help us add simple validation to a form.
@@ -52,7 +69,6 @@ We're going to use the `trim()` method and `length` property we have looked at [
 The example page can be found <a href="https://js1-form-validation.netlify.com/" target="_blank">here</a>.
 
 <iframe src="https://js1-form-validation.netlify.com/" style="height:400px"></iframe>
-
 
 Sometimes an input needs to have a minimum or maximum number of characters, or sometimes the input is simply required - it must have at least one character.
 
@@ -340,6 +356,6 @@ if (validateEmail(emailValue) === true) {
 
 ---
 
-[Go to the module assignment](ma) 
+[Go to the module assignment](ma)
 
 ---
