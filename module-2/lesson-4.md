@@ -14,7 +14,8 @@ Events "bubble up" through the DOM. This video explores what that means.
 
 <iframe src="https://player.vimeo.com/video/448069050" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-<a href="https://github.com/NoroffFEU/dom-events-onkeyup" target="_blank">Code from the video</a>
+
+<a href="https://github.com/NoroffFEU/event-bubbling" target="_blank">Code from the video</a>
 
 ## Data attributes
 
