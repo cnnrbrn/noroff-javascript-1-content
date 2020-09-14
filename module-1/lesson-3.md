@@ -20,7 +20,7 @@ console.log(dogs.breeds);
 // ["golden retriever", "labrador", "poodle"]
 ```
 
-<iframe src="https://scrimba.com/c/cKg2e7uP" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cKg2e7uP" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cKg2e7uP" target="_blank">Scrimba link</a>
 
