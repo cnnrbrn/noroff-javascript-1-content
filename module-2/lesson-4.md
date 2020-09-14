@@ -14,7 +14,6 @@ Events "bubble up" through the DOM. This video explores what that means.
 
 <iframe src="https://player.vimeo.com/video/448069050" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-
 <a href="https://github.com/NoroffFEU/event-bubbling" target="_blank">Code from the video</a>
 
 ## Data attributes
@@ -25,15 +24,15 @@ Data attributes are a way to store information or values on DOM elements.
 
 The video below looks at data attributes and adding click event handlers to a variable amount of elements using a loop.
 
-<iframe src="https://scrimba.com/c/c36wvqh8" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/c36wvqh8" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-<a href="https://scrimba.com/c/ckwGdkCv" target="_blank">Scrimba link</a>
+<a href="https://scrimba.com/c/c36wvqh8" target="_blank">Scrimba link</a>
 
 ## mouseover and mouesout events
 
 The following video looks at the `mouseover` and `mouseout` events and an example of using them together with data attributes.
 
-<iframe src="https://scrimba.com/c/cyw3zwu4" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cyw3zwu4" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cyw3zwu4" target="_blank">Scrimba link</a>
 

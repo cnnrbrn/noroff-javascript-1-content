@@ -46,7 +46,7 @@ We want to be able to pass different values into a function so that the code ins
 
 The Scrimba below takes a further look at function arguments.
 
-<iframe src="https://scrimba.com/c/crqy9NuP" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/crqy9NuP" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/crqy9NuP" target="_blank">Scrimba link</a>
 
@@ -71,7 +71,7 @@ console.log(myValue);
 
 The Scrimba below looks at returning values from functions.
 
-<iframe src="https://scrimba.com/c/czLNwafP" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/czLNwafP" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/czLNwafP" target="_blank">Scrimba link</a>
 
@@ -83,7 +83,7 @@ Below is an example of using the return value of a function.
 
 In the Scrimba a simple age-checking function for a website is created.
 
-<iframe src="https://scrimba.com/c/ceqmb6fB" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/ceqmb6fB" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/ceqmb6fB" target="_blank">Scrimba link</a>
 
@@ -98,7 +98,7 @@ In this Scrimba:
 -   the string is returned from the function and assigned to a variable
 -   the variable is assigned to the innerHTML property of an existing HTML element
 
-<iframe src="https://scrimba.com/c/ceqmWphQ" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/ceqmWphQ" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/ceqmWphQ" target="_blank">Scrimba link</a>
 

@@ -2,8 +2,8 @@
 
 In this lesson we will take a look at:
 
-- arrow functions
-- making API calls with the `then` and `catch` methods - regular promise syntax
+-   arrow functions
+-   making API calls with the `then` and `catch` methods - regular promise syntax
 
 ## Arrow functions
 
@@ -20,13 +20,12 @@ function logMessage(message) {
 like this:
 
 ```js
-const logMessage = (message) =>  console.log(message);
+const logMessage = (message) => console.log(message);
 ```
 
-<iframe src="https://scrimba.com/c/cg29pns6" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cg29pns6" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cg29pns6" target="_blank">Scrimba link</a>
-
 
 ## Asynchronous code
 
@@ -99,16 +98,16 @@ Once executed, the promise is `pending`. At some point it will return and will e
 
 <img src="/images/js1/promise-2.png" alt="promise" style="max-width:550px">
 
-<!-- 
+<!--
 When we execute asynchronous code we can use a `Promise` to run a function when the code is successful and returns a value, or when the code is not successful and returns an error. -->
 
 Form [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise):
 
 > A Promise is in one of these states::
 >
-> - `pending`: initial state, neither fulfilled nor rejected.
-> - `fulfilled`: meaning that the operation completed successfully.
-> - `rejected`: meaning that the operation failed.
+> -   `pending`: initial state, neither fulfilled nor rejected.
+> -   `fulfilled`: meaning that the operation completed successfully.
+> -   `rejected`: meaning that the operation failed.
 
 ### Promise chaining
 
@@ -118,26 +117,26 @@ Sometimes what is executed in our fulfilled function also returns a promise. Thi
 
 `Fulfilled` states are handled by a `Promise`'s `then` method and `rejected` states are handled by a `catch` method.
 
-Both these methods take a function as an argument. This is where we can write code to handle the return value of the promise. 
+Both these methods take a function as an argument. This is where we can write code to handle the return value of the promise.
 
 These functions in turn recieve an argument which is the return value of the promise (if successful and the promise has resolved) or the error from a rejected promise.
 
 <img src="/images/js1/promise-3.png" alt="promise" style="max-width:550px">
 
---- 
+---
 
 Most of the time you won't write your own promises but will rather use libraries and other existing code built on promises.
-
 
 ## then/catch example
 
 In this video we will rewrite the `async/await` API call to use regular promise syntax.
-
 
 <iframe src="https://player.vimeo.com/video/450776515" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://github.com/NoroffFEU/get-request-with-regular-promise-syntax" target="_blank">Code from the video</a>
 
 ---
-- [Go to lesson 4](4) 
+
+-   [Go to lesson 4](4)
+
 ---

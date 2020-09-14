@@ -2,9 +2,9 @@
 
 In this lesson we will take a look at:
 
-- default parameters values in functions
-- creating dynamic HTML inside a function based on arguments
-- handling errors with a `try-catch-finally` statement
+-   default parameters values in functions
+-   creating dynamic HTML inside a function based on arguments
+-   handling errors with a `try-catch-finally` statement
 
 ## Default parameter values
 
@@ -18,7 +18,7 @@ function printMessage(message = "No message provided") {
 
 If we call `printMessage()` and don't pass in an argument to the `message` parameter, message will have the default value of `"No message provided"`.
 
-<iframe src="https://scrimba.com/c/cB3qn6u7" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cB3qn6u7" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cB3qn6u7" target="_blank">Scrimba link</a>
 

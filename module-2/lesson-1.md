@@ -11,7 +11,7 @@ In this lesson we will look at:
 
 Often called `callbacks`, it is very common to pass functions as arguments to other functions and have the receiving function execute them.
 
-<iframe src="https://scrimba.com/c/cMgggbHG" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cMgggbHG" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cMgggbHG" target="_blank">Scrimba link</a>
 
@@ -23,7 +23,7 @@ When you use a `forEach` function, you will pass in a function to be executed by
 
 It does have some limitations though, such as the inability to use `break` or `continue`.
 
-<iframe src="https://scrimba.com/c/cJggwKAN" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cJggwKAN" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cJggwKAN" target="_blank">Scrimba link</a>
 
@@ -44,7 +44,7 @@ It has two required arguments:
 1. the function to be executed
 2. the delay - the delay in milliseconds before the function is executed
 
-<iframe src="https://scrimba.com/c/cLgggqTQ" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cLgggqTQ" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cLgggqTQ" target="_blank">Scrimba link</a>
 
@@ -60,7 +60,7 @@ setInterval(function () {
 }, 1000);
 ```
 
-<iframe src="https://scrimba.com/c/czLLpgfv" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/czLLpgfv" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/czLLpgfv" target="_blank">Scrimba link</a>
 

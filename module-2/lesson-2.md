@@ -41,7 +41,7 @@ const remainder = 5 % 2;
 // remainder will equal 1
 ```
 
-<iframe src="https://scrimba.com/c/cMgg4eha" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cMgg4eha" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cMgg4eha" target="_blank">Scrimba link</a>
 

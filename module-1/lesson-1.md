@@ -64,7 +64,7 @@ There are more details on `const` and `let` in the Scrimba below.
 
 The cast begins with a brief look at the `undefined` value.
 
-<iframe src="https://scrimba.com/c/cDkbEWTM" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cDkbEWTM" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cDkbEWTM" target="_blank">Scrimba link</a>
 
@@ -106,7 +106,7 @@ console.log(pet.type);
 // dog
 ```
 
-<iframe src="https://scrimba.com/c/cMgvkECv" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cMgvkECv" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cMgvkECv" target="_blank">Scrimba link</a>
 
@@ -159,7 +159,7 @@ dog.bark();
 
 Functions inside objects are often called `methods`.
 
-<iframe src="https://scrimba.com/c/cMgvJKHK" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cMgvJKHK" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cMgvJKHK" target="_blank">Scrimba link</a>
 
@@ -168,7 +168,6 @@ Functions inside objects are often called `methods`.
 #### Watch
 
 [YoutTube video: ECMAScript, TC39, and the History of JavaScript](https://www.youtube.com/watch?v=gytOcNFV1dM)
-
 
 ## Lesson Task
 

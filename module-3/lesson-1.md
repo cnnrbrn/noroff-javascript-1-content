@@ -45,7 +45,7 @@ if (someVariable) {
 }
 ```
 
-<iframe src="https://scrimba.com/c/c7qJwDS4" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/c7qJwDS4" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/c7qJwDS4" target="_blank">Scrimba link</a>
 
@@ -84,7 +84,6 @@ The following video takes another look at the same code.
 <iframe src="https://player.vimeo.com/video/450070174" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://github.com/NoroffFEU/get-requests-introduction" target="_blank">Code from both videos</a>
-
 
 ---
 

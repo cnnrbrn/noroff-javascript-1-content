@@ -13,7 +13,7 @@ We can use the `length` property to count the number of characters in a string.
 
 The `trim()` method is used to remove the spaces at the beginning and end of strings.
 
-<iframe src="https://scrimba.com/c/cQRRVdTq" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/cQRRVdTq" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/cQRRVdTq" target="_blank">Scrimba link</a>
 
@@ -21,7 +21,7 @@ The `trim()` method is used to remove the spaces at the beginning and end of str
 
 The video below explains how to use the `addEventListener` method to add event listeners to elements.
 
-<iframe src="https://scrimba.com/c/ckwGdkCv" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://scrimba.com/c/ckwGdkCv" width="640" height="440" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <a href="https://scrimba.com/c/ckwGdkCv" target="_blank">Scrimba link</a>
 
