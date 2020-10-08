@@ -76,6 +76,8 @@ The video below takes a look at how JSON is sent from a server through an API ca
 
 <iframe src="https://player.vimeo.com/video/444361111" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+<a href="https://vimeo.com/444361111/3f57c9b751" target="_blank">View on Vimeo</a>
+
 ---
 
 ### Loading multiple JavaScript files
@@ -117,6 +119,8 @@ bark();
 
 <iframe src="https://player.vimeo.com/video/444338027" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+<a href="https://vimeo.com/444338027/73615fb5ff" target="_blank">View on Vimeo</a>
+
 ---
 
 ## Creating HTML from objects
@@ -129,6 +133,8 @@ The first video looks at creating HTML from a single object's properites and add
 
 <iframe src="https://player.vimeo.com/video/444562202" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+<a href="https://vimeo.com/444562202/3290e75a25" target="_blank">View on Vimeo</a>
+
 The code from the video is on the [master branch](https://github.com/NoroffFEU/creating-html-from-an-array-of-objects) of this repo.
 
 ---
@@ -139,6 +145,8 @@ This video looks at setting the innerHTML property of individual DOM elements fr
 
 <iframe src="https://player.vimeo.com/video/444582197" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+<a href="https://vimeo.com/444582197/4a27b67841" target="_blank">View on Vimeo</a>
+
 The code from the video is on the [part-2 branch](https://github.com/NoroffFEU/creating-html-from-an-array-of-objects/tree/part-2) of the repo.
 
 ---
@@ -148,6 +156,8 @@ The code from the video is on the [part-2 branch](https://github.com/NoroffFEU/c
 In this video HTML is created by looping through an array of objects.
 
 <iframe src="https://player.vimeo.com/video/444696340" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<a href="https://vimeo.com/444696340/adfa854388" target="_blank">View on Vimeo</a>
 
 The code from the video is on the [part-3 branch](https://github.com/NoroffFEU/creating-html-from-an-array-of-objects/tree/part-3) of the repo.
 

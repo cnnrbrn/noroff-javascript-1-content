@@ -53,6 +53,8 @@ The video below is an intro to the DOM.
 
 <iframe src="https://player.vimeo.com/video/444052197" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+<a href="https://vimeo.com/444052197/983809296b" target="_blank">View on Vimeo</a>
+
 ## DOM selectors
 
 To manipulate the DOM, we first need to select an element on which we can do this manipulation.
@@ -89,6 +91,8 @@ document.querySelectorAll("li");
 The video below explores selecting and editing DOM elements.
 
 <iframe src="https://player.vimeo.com/video/444301212" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<a href="https://vimeo.com/444301212/e51a5a074e" target="_blank">View on Vimeo</a>
 
 <a href="https://github.com/NoroffFEU/manipulating-the-dom" target="_blank">Code from the video</a>
 

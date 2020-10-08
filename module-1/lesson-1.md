@@ -18,6 +18,8 @@ In the video below we'll take a look at logging variable values using the consol
 
 <iframe src="https://player.vimeo.com/video/443132927" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+<a href="https://vimeo.com/443132927/bb68f831f5" target="_blank">View on Vimeo</a>
+
 ## ES6
 
 `ECMAScript` (`ES`) is the official specification for JavaScript. It decides what features should be in the language.
@@ -84,6 +86,8 @@ const sentences = `First sentence.
 This is a far cleaner way to get new lines in strings than using either double or single quotes.
 
 <iframe src="https://player.vimeo.com/video/443988703" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<a href="https://vimeo.com/443988703/fa6ab718df" target="_blank">View on Vimeo</a>
 
 <a href="https://github.com/NoroffFEU/creating-strings-with-backticks" target="_blank">Code from the video</a>
 
